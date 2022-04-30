@@ -1,6 +1,5 @@
-def calculator(a, b, c):
-    answer = a + b 
-    return answer
+name = 'sean'
 
+name = name.upper()
 
-print(calculator(2,3,4))
+print(name)
