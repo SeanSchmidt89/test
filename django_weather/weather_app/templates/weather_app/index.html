@@ -8,8 +8,14 @@
 </head>
 <body>
     <p>hi</p>
-
-    <input type="text" name="" id="">
-    <button type="submit">Submit</button>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="text" name="city" id="" placeholder="Enter City">
+        <button type="submit">Submit</button>
+    </form>
+    <p>CITY: {{city}}</p>
+    <p>CONDITIONS: {{descrition}}</p>
+    <p>TEMP: {{temp}}</p>
+    <img src="http://openweathermap.org/img/w/{{icon}}.png" width='200px' height='200px' alt="">
 </body>
 </html>
