@@ -9,14 +9,15 @@
 {% block content %}
     
     {% if request.user.is_authenticated %}
-        <p>Welcome, {{request.user}}</p>
+        <p>Welcome, {{request.user|title}}</p>
         <a href="{% url 'logout' %}">Logout</a>
         <br>
         {% else %}
         <a href="{% url 'login' %}">Login</a>
+        <p>Dont have an account? <a href="{% url 'register' %}">Register</a></p>
         <br>
     {% endif %}
-        
+    <br>
     <a href="{% url 'create' %}">Create a Todo</a>
     <h3>Todos:</h3>
     
