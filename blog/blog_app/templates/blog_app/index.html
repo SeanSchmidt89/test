@@ -12,14 +12,25 @@
 {% block content %}
 <br>
 <h1>Blog Posts </h1>
-
+<br>
+<a href="{% url 'create' %}">Create a Post</a>
+<br>
+<br>
 <ul>
 {% for post in object_list  %}
-    <li><a href="{% url 'post_details' post.id %}">{{post.title}}</a> - {{post.author.first_name}}
-    {{post.author.last_name}}<br>
-    {{post.body}}</li>
+    <li>
+        <a href="{% url 'post_details' post.id %}">{{post.title}}</a> - {{post.author.first_name}}
+        {{post.author.last_name}} - {{post.post_date}}- <small><a href="{% url 'update' post.id %}">Edit</a>
+        <a href="{% url 'delete' post.id %}">Delete</a>
+        </small>
+        <br>
+        {{post.body}}
+    </li>
+    <br>
 {% endfor %}
 </ul>    
+
+
 
 {% endblock content %}
     
