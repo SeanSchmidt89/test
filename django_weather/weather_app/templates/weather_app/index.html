@@ -1,21 +1,31 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'weather_app/styles.css' %}">
     <title>Document</title>
 </head>
 <body>
-    <p>hi</p>
+    <div class="container">
+    <br>
+    <h1>Seans Weather App</h1>
+    <hr>
+    <br>
+    <h3>Get your city's currenty weather conditions</h3>
     <form action="" method="POST">
         {% csrf_token %}
         <input type="text" name="city" id="" placeholder="Enter City">
         <button type="submit">Submit</button>
     </form>
-    <p>CITY: {{city}}</p>
-    <p>CONDITIONS: {{descrition}}</p>
-    <p>TEMP: {{temp}}</p>
-    <img src="http://openweathermap.org/img/w/{{icon}}.png" width='200px' height='200px' alt="">
+    <p>City: {{city}}</p>
+    <p>Temp: {{temp}}</p>
+    <p>Conditions: {{descrition}}</p>
+    <p>Humidity: {{humidity}}</p>
+    <p>Todays Date: {{day}}</p>
+    <img src="http://openweathermap.org/img/w/{{icon}}.png" width='180px' height='180px' alt="">
+</div>
 </body>
 </html>
