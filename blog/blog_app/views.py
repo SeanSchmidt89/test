@@ -24,6 +24,14 @@ class CreatePost(CreateView):
     template_name = 'blog_app/create_post.html'
     success_url = reverse_lazy('index')
 
+
+class CreateCategory(CreateView):
+    model = Category
+    template_name = 'blog_app/create_category.html'
+    fields = '__all__'
+    success_url = reverse_lazy('index')
+
+
 class UpdatePost(UpdateView):
     model = Post
     form_class = EditForm
@@ -34,3 +42,8 @@ class DeletePostView(DeleteView):
     model = Post
     template_name = 'blog_app/delete.html'
     success_url = reverse_lazy('index')
+
+def CategoryView(request, cats):
+    category_posts = Post.objects.filter(category=cats.replace('-', ' '))
+
+    return render(request, 'blog_app/categories.html', {'cats':cats.title().replace('-', ' '), 'category_posts':category_posts})

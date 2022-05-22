@@ -3,7 +3,7 @@
 
 
 {% block title %}
-    Home
+Categories
 {% endblock title %}
     
 
@@ -11,16 +11,16 @@
 
 {% block content %}
 <br>
-<h1>Blog Posts </h1>
-<br>
-<a href="{% url 'create' %}">Create a Post</a>
-<br>
-<br>
-<ul>
-{% for post in object_list  %}
+
+{% if category_posts %}
+    <h1>{{cats}}</h1>
+    <br>
+
+    <ul>
+    {% for post in category_posts %}
     <li>
         <a href="{% url 'post_details' post.id %}">{{post.title}}</a> 
-        - <a href="{% url 'category' post.category|slugify %}">{{post.category}}</a> 
+        - {{post.category}} 
         - {{post.author.first_name}}
         {{post.author.last_name}} - {{post.post_date}} 
         {% if user.is_authenticated %}
@@ -30,9 +30,13 @@
         {% endif %}
         <br>
         {{post.body| slice:':200'|safe}}</li>
-    <br>
-{% endfor %}
-</ul>    
+    {% endfor %}
+    </ul>
+
+{% else %}
+    <h1>Sorry this page does not exist...</h1>
+{% endif %}
+    
 
 
 
