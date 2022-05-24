@@ -12,10 +12,22 @@ class Index(ListView):
     template_name = 'blog_app/index.html'
     ordering = ['-post_date']
 
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Category.objects.all()
+        context = super(Index, self).get_context_data(*args, **kwargs)
+        context['cat_menu'] = cat_menu
+        return context
+
 
 class PostDetail(DeleteView):
     model = Post
     template_name = 'blog_app/post_details.html'
+
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Category.objects.all()
+        context = super(PostDetail, self).get_context_data(*args, **kwargs)
+        context['cat_menu'] = cat_menu
+        return context
 
 
 class CreatePost(CreateView):
@@ -38,10 +50,17 @@ class UpdatePost(UpdateView):
     template_name = 'blog_app/update.html'
     success_url = reverse_lazy('index')
 
+
 class DeletePostView(DeleteView):
     model = Post
     template_name = 'blog_app/delete.html'
     success_url = reverse_lazy('index')
+
+
+def CategoryListView(request):
+    cat_menu_list = Category.objects.all()
+    return render(request, 'blog_app/category_list.html', {'cat_menu_list':cat_menu_list})
+
 
 def CategoryView(request, cats):
     category_posts = Post.objects.filter(category=cats.replace('-', ' '))
