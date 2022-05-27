@@ -11,18 +11,22 @@
 
 
 {% if user.is_authenticated %}
-    <h1>Update Blog Post</h1>
-    <div class="form-group">
-        <form action="" method="POST">
-            {% csrf_token %}
-            {{form.as_p}}
-            <button class="btn btn-secondary">Update</button>
-        </form>
-    </div>
-    <a href="{% url 'index' %}" class="btn btn-secondary">Back</a>
-{% else %}
+    {% if user.id == post.author.id %}
+        <h1>Update Blog Post</h1>
+        <div class="form-group">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button class="btn btn-secondary">Update</button>
+            </form>
+        </div>
+        <a href="{% url 'index' %}" class="btn btn-secondary">Back</a>
+    {% else %}
     <br>
+    <p>You can not edit another users posts.</p>
+    <a href="{% url 'index' %}" class="btn btn-secondary">Back</a>
+    {% endif %}
+{% else %}
     <p>Please Login to update posts</p>
-
 {% endif %}
 {% endblock content %}

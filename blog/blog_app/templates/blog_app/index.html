@@ -24,9 +24,11 @@
         - {{post.author.first_name}}
         {{post.author.last_name}} - {{post.post_date}} 
         {% if user.is_authenticated %}
+            {% if user.id == post.author.id %}
             -<small><a href="{% url 'update' post.id %}">Edit</a>
             <a href="{% url 'delete' post.id %}">Delete</a>
             </small>
+            {% endif %}
         {% endif %}
         <br>
         {{post.body| slice:':200'|safe}}</li>
