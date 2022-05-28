@@ -1,0 +1,26 @@
+{% extends 'blog_app/base.html' %}
+
+
+{% block title %}
+    Home
+{% endblock title %}
+
+
+
+
+{% block content %}
+    <p>kjfois djfoijsdfjsdoijfoisdjf</p>
+
+    
+    {% for post in posts %}
+        <p>{{post}}
+            <a href="{% url 'update' post.id %}">Update</a>
+        </p>
+    {% endfor %}
+        
+
+
+{% endblock content %}
+    
+    
+    
