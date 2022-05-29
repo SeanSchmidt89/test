@@ -2,23 +2,20 @@
 
 
 {% block title %}
-    Home
+    Delete
 {% endblock title %}
-
 
 
 {% block content %}
 <br>
-<h3>Update Page</h3>
+<h3>Delete Page</h3>
 <hr>
-<br>
 <form action="" method="POST">
     {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Update</button>
+    <p>Are you sure you would like to delete : {{post.title|title}} ?</p>
+    <button type="submit">Delete</button>
 </form>
-<br>
-<a href="{% url 'index' %}">Back</a>
 
+<a href="{% url 'index' %}">Back</a>
 {% endblock content %}
     

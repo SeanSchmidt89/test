@@ -9,14 +9,12 @@
 
 {% block content %}
 <br>
-<h3>Update Page</h3>
+<h3>Post Details</h3>
 <hr>
 <br>
-<form action="" method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Update</button>
-</form>
+<p>{{post.title|title}} - By - {{post.user|title}}</p>
+<br>
+<p>{{post.body}}</p>
 <br>
 <a href="{% url 'index' %}">Back</a>
 

@@ -9,15 +9,24 @@
 
 
 {% block content %}
-    <p>kjfois djfoijsdfjsdoijfoisdjf</p>
-
-    
-    {% for post in posts %}
-        <p>{{post}}
-            <a href="{% url 'update' post.id %}">Update</a>
-        </p>
-    {% endfor %}
-        
+<br>
+<h3>Blog Posts:</h3>
+<hr>
+<br>
+<a href="{% url 'addpost' %}">Make a Post</a>
+<br><br>
+<ul>
+{% for post in posts %}
+    <li><a href="{% url 'postdetails' post.id %}">{{post.title|title}}</a> - By {{post.user|title}}<br>
+        <br>
+        {{post.body|title}}
+        <br><br>
+        <small><a href="{% url 'update' post.id %}">(Update)</a></small>
+        <small><a href="{% url 'delete' post.id %}">(Delete)</a></small>
+        <br><br><br><br>
+    </li>
+{% endfor %}
+</ul>   
 
 
 {% endblock content %}
