@@ -12,6 +12,15 @@
 <br>
 <h3>Blog Posts:</h3>
 <hr>
+
+{% if user.is_authenticated %}
+    <p>Welcome, {{user}}</p>
+    <a href="{% url 'logout' %}">Logout</a>
+{% else %}
+    <a href="{% url 'login' %}">Login</a>
+
+{% endif %}
+    
 <br>
 <a href="{% url 'addpost' %}">Make a Post</a>
 <br><br>
