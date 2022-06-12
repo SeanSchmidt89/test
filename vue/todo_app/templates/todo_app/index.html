@@ -16,10 +16,18 @@
 <body class="bg-light p-5">
     <!--setup Vue app-->
     <div id="app">
-        <h1>Hello everyone!</h1>
+        <h1>{{headerText}}</h1>
     </div>
 
     <!--Create Vue Object-->
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                headerText: 'Vue To Do'
+            }
+        })
+    </script>
     
 </body>
 </html>
