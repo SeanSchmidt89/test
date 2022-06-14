@@ -12,6 +12,13 @@
 
     <!--Vue-->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <style>
+        .strikeThrough{
+            text-decoration: line-through;
+
+        }
+    </style>
 </head>
 <body class="bg-light p-5">
 
@@ -29,10 +36,11 @@
             <div class="col-4 offset-2">
                 <h3 class="text-center">Incomplete</h3>
                 <div v-for="todo in incompleteTodo" class="card p-4 mt-3 flex-row justify-content-between">
+                    <!--1. todo text-->
                     {{todo.id}} {{todo.text}}
                     <div class="buttons">
-                        <button class="btn btn-sm btn-success">Complete</button>
-                        <button class="btn btn-sm btn-danger">Delete</button>
+                        <button class="btn btn-sm btn-success" v-on:click="toggleComplete(todo.id)">Complete</button>
+                        <button class="btn btn-sm btn-danger" v-on:click="deleteTodo(todo.id)">Delete</button>
                     </div>
                 </div>
             </div>
@@ -42,10 +50,11 @@
             <div class="col-4">
                 <h3 class="text-center">Complete</h3>
                 <div v-for="todo in completeTodo" class="card p-4 mt-3 flex-row justify-content-between">
-                    {{todo.id}} {{todo.text}}
+                    <!--1. todo text-->
+                    <span v-bind:class="{strikeThrough: todo.complete}">{{todo.id}} {{todo.text}}</span>
                     <div class="buttons">
-                        <button class="btn btn-sm btn-success">Complete</button>
-                        <button class="btn btn-sm btn-danger">Delete</button>
+                        <button class="btn btn-sm btn-success" v-on:click="toggleComplete(todo.id)">Complete</button>
+                        <button class="btn btn-sm btn-danger" v-on:click="deleteTodo(todo.id)">Delete</button>
                     </div>
                 </div>
             </div>
@@ -75,6 +84,28 @@
                     })
                     this.idCount +=1
                     this.newTodoText = ''
+                },
+                // toggle complete value for selected todo
+                toggleComplete: function(todoId){
+                    //combine the completed and incomplete todos
+                    let todos = this.completeTodo.concat(this.incompleteTodo)
+
+                    //change the selected todo items complete
+                    todos = todos.map((todo)=>todo.id !==todoId? todo : {...todo, complete:!todo.complete})
+
+                    //split todos into seprate arrays
+                    this.completeTodo = todos.filter(todo=>todo.complete)
+                    this.incompleteTodo = todos.filter(todo=>!todo.complete)
+                },
+                deleteTodo: function(todoId){
+                    //combine the completed and incomplete todos
+                    let todos = this.completeTodo.concat(this.incompleteTodo)
+                    //loop thru todos, keep todo that does not match todoId
+                    todos = todos.filter(todo=>todo.id !== todoId)
+
+                    //split todos into seprate arrays
+                    this.completeTodo = todos.filter(todo=>todo.complete)
+                    this.incompleteTodo = todos.filter(todo=>!todo.complete)
                 }
             }
         })
