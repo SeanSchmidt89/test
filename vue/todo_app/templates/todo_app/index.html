@@ -70,7 +70,7 @@
     <!--Create Vue Object-->
     <script>
         const BASE_URL = 'http://127.0.0.1:8000/'
-        const csrfToken = document.getElementByName('csrfmiddlewaretoken')[0]
+        const csrfToken = document.getElementsByName('csrfmiddlewaretoken')[0]
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
         axios.defaults.headers = {
             'Content-Type': 'application/json',
@@ -119,7 +119,7 @@
                         url: BASE_URL + 'create/',
                         method: "POST",
                         data: {
-                            'new_todo_text': 'hello world'
+                            'new_todo_text': this.newTodoText 
                         }
                     })
                     .then(response=>console.log(response))
