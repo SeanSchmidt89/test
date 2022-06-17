@@ -24,7 +24,7 @@
 
     <!--setup Vue app-->
     <div id="app">
-        <h1 class="text-center">{{headerText}}</h1>
+        <h1 class="text-center">[[headerText]]</h1>
         <div class="row">
             <div class="col-4 offset-4 d-flex mb-5 justify-content-center">
                 <input type="text" class="form-control" v-model="newTodoText">
@@ -37,7 +37,7 @@
                 <h3 class="text-center">Incomplete</h3>
                 <div v-for="todo in incompleteTodo" class="card p-4 mt-3 flex-row justify-content-between">
                     <!--1. todo text-->
-                    {{todo.id}} {{todo.text}}
+                    [[todo.id]] [[todo.text]]
                     <div class="buttons">
                         <button class="btn btn-sm btn-success" v-on:click="toggleComplete(todo.id)">Complete</button>
                         <button class="btn btn-sm btn-danger" v-on:click="deleteTodo(todo.id)">Delete</button>
@@ -51,7 +51,7 @@
                 <h3 class="text-center">Complete</h3>
                 <div v-for="todo in completeTodo" class="card p-4 mt-3 flex-row justify-content-between">
                     <!--1. todo text-->
-                    <span v-bind:class="{strikeThrough: todo.complete}">{{todo.id}} {{todo.text}}</span>
+                    <span v-bind:class="{strikeThrough: todo.complete}">[[todo.id]] [[todo.text]]</span>
                     <div class="buttons">
                         <button class="btn btn-sm btn-success" v-on:click="toggleComplete(todo.id)">Complete</button>
                         <button class="btn btn-sm btn-danger" v-on:click="deleteTodo(todo.id)">Delete</button>
@@ -67,6 +67,7 @@
     <!--Create Vue Object-->
     <script>
         const app = new Vue({
+            delimiters: ['[[', ']]'],
             el: '#app',
             data: {
                 headerText: 'Vue To Do',

@@ -5,4 +5,5 @@ from .import views
 app_name = 'todo_app'
 urlpatterns = [
     path('', views.index, name='index'),
+    path('list/', views.todo_list, name='todo_list'),
 ]
