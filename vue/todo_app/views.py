@@ -24,4 +24,8 @@ def todo_list(request):
 
     return response
 
-#39:00 - 43:00 back end
+@api_view(['POST'])
+def create_todo(request):
+    print(request.data)
+
+#2:22back end
