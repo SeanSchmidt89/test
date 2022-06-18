@@ -1,5 +1,5 @@
 import re
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import *
@@ -53,6 +53,50 @@ def create_todo(request):
 
     return response
 
-    print(request.data)
 
-#2:22back end
+@api_view(['POST'])
+def toggle_complete(request, todo_id):
+    response = Response()
+    print(todo_id)
+
+    #pass the TodoItem class where the class id = id passed in view
+    todo = get_object_or_404(Todo, id=todo_id )
+
+    #flip the completed value
+    todo.completed = not todo.completed
+    todo.save()
+
+    #get all the todos from DB
+
+    todos = Todo.objects.all()
+
+    #serialize all objects
+    todo_serializer = TodoSerializer(todos, many=True)
+
+    response.data = {
+        'todos': todo_serializer.data
+    }
+    return response
+
+
+@api_view(['POST'])
+def delete_todo(request, todo_id):
+    response = Response()
+
+    todo = get_object_or_404(Todo, id=todo_id)
+
+    todo.delete()
+
+    todos = Todo.objects.all()
+
+    todo_serializer = TodoSerializer(todos, many=True)
+
+    response.data = {
+        'todos': todo_serializer.data
+    }
+
+    return response
+     
+
+
+#19:00 back end

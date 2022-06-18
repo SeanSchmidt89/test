@@ -54,7 +54,7 @@
                 <h3 class="text-center">Complete</h3>
                 <div v-for="todo in completeTodo" class="card p-4 mt-3 flex-row justify-content-between">
                     <!--1. todo text-->
-                    <span v-bind:class="{strikeThrough: todo.complete}">[[todo.id]] [[todo.text]]</span>
+                    <span v-bind:class="{strikeThrough: todo.completed}">[[todo.id]] [[todo.text]]</span>
                     <div class="buttons">
                         <button class="btn btn-sm btn-success" v-on:click="toggleComplete(todo.id)">Complete</button>
                         <button class="btn btn-sm btn-danger" v-on:click="deleteTodo(todo.id)">Delete</button>
@@ -101,8 +101,8 @@
             methods: {
                 // create method that toggles complete() and delete()
                 updateTodos: function(todos){
-                    this.completeTodo = todos.filter(todo=>todo.complete)
-                    this.incompleteTodo = todos.filter(todo=>!todo.complete)
+                    this.completeTodo = todos.filter(todo=>todo.completed)
+                    this.incompleteTodo = todos.filter(todo=>!todo.completed)
                 },
                 
                 //addTodo: function(){
@@ -122,32 +122,34 @@
                             'new_todo_text': this.newTodoText 
                         }
                     })
-                    .then(response=>console.log(response))
+                    //.then(response=>console.log(response))
+                    .then(response=>{
+                        this.updateTodos(response.data.todos)
+                    })
                     .catch(error=>console.log(error.response))
                 },
                 // toggle complete value for selected todo
                 toggleComplete: function(todoId){
-                    //combine the completed and incomplete todos
-                    let todos = this.completeTodo.concat(this.incompleteTodo)
+                    axios({
+                        url: BASE_URL + `toggle-complete/${todoId}`,
+                        method: 'post'
+                    })
+                    //.then(response=>console.log(response.data))
+                    .then(response=>{
+                        this.updateTodos(response.data.todos)
+                    })
+                    .catch(error=>console.log(error))
 
-                    //change the selected todo items complete
-                    todos = todos.map((todo)=>todo.id !==todoId? todo : {...todo, complete:!todo.complete})
-
-                    //split todos into seprate arrays
-                    //this.completeTodo = todos.filter(todo=>todo.complete)
-                    //this.incompleteTodo = todos.filter(todo=>!todo.complete)
-                    this.updateTodos(todos)
                 },
                 deleteTodo: function(todoId){
-                    //combine the completed and incomplete todos
-                    let todos = this.completeTodo.concat(this.incompleteTodo)
-                    //loop thru todos, keep todo that does not match todoId
-                    todos = todos.filter(todo=>todo.id !== todoId)
-
-                    //split todos into seprate arrays
-                    //this.completeTodo = todos.filter(todo=>todo.complete)
-                    //this.incompleteTodo = todos.filter(todo=>!todo.complete)
-                    this.updateTodos(todos)
+                    axios({
+                        url: BASE_URL + `delete/${todoId}`,
+                        method: 'POST'
+                    })
+                    .then(response=>{
+                        this.updateTodos(response.data.todos)
+                    })
+                    .error(error=>console.log(error))
                 }
             }
         })
