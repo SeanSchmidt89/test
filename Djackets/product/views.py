@@ -13,4 +13,4 @@ class LastestProductsList(APIView):
         return Response(serializer.data)
 
 
-        #38:00
+        #43:00
