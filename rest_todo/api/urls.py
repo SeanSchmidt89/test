@@ -3,8 +3,11 @@ from . import views
 
 urlpatterns = [
     path('', views.apiOverview, name='api-overview'),
-    path('task_list/', views.taskList, name='task-list'),
-    path('task_detail/<int:pk>/', views.taskDetail, name='task-detial'),
+    path('task-list/', views.taskList, name='task-list'),
+    path('task-detail/<int:pk>/', views.taskDetail, name='task-detial'),
+    path('task-create/', views.taskCreate, name='task-create'),
+    path('task-update/<int:pk>/', views.taskUpdate, name='task-update'),
+    path('task-delete/<int:pk>/', views.taskDelete, name='task-delete'),
 ]
 
 
