@@ -8,7 +8,7 @@ class ArticleSerializer(serializers.Serializer):
     description = serializers.CharField()
     body = serializers.CharField()
     location = serializers.CharField()
-    publication_data = serializers.DateField()
+    publication_date = serializers.DateField()
     active = serializers.BooleanField()
     created_at = serializers.DateTimeField(read_only=True)
     updated_at = serializers.DateTimeField(read_only=True)
@@ -23,7 +23,7 @@ class ArticleSerializer(serializers.Serializer):
         instance.description = validated_data.get('description', instance.description)
         instance.body = validated_data.get('body', instance.body)
         instance.location = validated_data.get('location', instance.location)
-        instance.publication_data = validated_data.get('publication_data', instance.publication_data)
+        instance.publication_date = validated_data.get('publication_date', instance.publication_date)
         instance.active = validated_data.get('active', instance.active)
         instance.save()
         return instance
