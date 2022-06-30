@@ -5,28 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello Vue</title>
+    <style>
+        .container {
+            margin: 30px;
+        }
+    </style>
 </head>
+
 <body>
-    
-<div id="app">
-    <h1>{{ message }}</h1>
-    <h3>{{ num }}</h3>
-    <img v-bind:src="img" alt="">
-    <a v-bind:href="link">Vue WebPage</a>
-</div>
+    <div id="app">
+        <div class="container">
+            <h1>List of Users</h1>
+            <ul>
+                <li v-for="user in users">{{user}}</li>
+            </ul>
+            <hr>
+            <h2>List of Numbers from 1 to 0</h2>
+            <p v-for="number in 10">{{number}}</p>
+        </div>
+    </div>
 
 
-
-
-
-
-
-
-
-<script src="https://unpkg.com/vue@3"></script>
-<script src="main.js"></script>
-
-
-
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="main.js"></script>
 </body>
 </html>
