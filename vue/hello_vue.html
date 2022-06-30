@@ -16,12 +16,14 @@
     <div id="app">
         <div class="container">
             <h1>List of Users</h1>
-            <ul>
-                <li v-for="user in users">{{user}}</li>
-            </ul>
             <hr>
-            <h2>List of Numbers from 1 to 0</h2>
-            <p v-for="number in 10">{{number}}</p>
+            <div v-for="user in users">
+                <div class="container">
+                    <p><strong>User:</strong> {{user.name}}</p>
+                    <p><strong>Profession:</strong> {{user.profession}}</p>
+                </div>
+                <hr>
+            </div>
         </div>
     </div>
 
