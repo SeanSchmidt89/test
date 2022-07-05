@@ -10,32 +10,10 @@
 
 <body>
     <div id="app">
-        <div class="row justify-content-center mt-3">
-            <form @submit.prevent="onSubmit">
-                <div class="form-group">
-                    <label for="comment-text">Publish a comment!</label>
-                    <textarea v-model="comment"
-                              id="comment-text" 
-                              class='form-control' 
-                              cols="80" 
-                              rows="5"></textarea>
-                    <br>
-                    <button class="btn btn-sm btn-primary" type="submit">Publish</button>
-                    <br><br>
-                    <p v-if="error" style="color: red;">{{error}}</p>
-                </div>
-            </form>
-        </div>
-        <div class="row justify-content-center mt-3">
-            <div class="col-10">
-                    <div class="card mt-1" v-for="i in comments">
-                        <div class="card-body">
-                            {{i}}
-                        </div>
-                    </div>
-            </div>
-        </div>
+        <to-do :tasks="tasks" :remaining="taskCount" @add-task="addNewTask"></to-do>
     </div>
+
+
 
 
     <script src="https://unpkg.com/vue@3"></script>
