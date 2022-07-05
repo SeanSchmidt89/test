@@ -1,31 +1,28 @@
 const app = Vue.createApp({
     data(){
-        return {
-            users: [
+        return{
+            comments: [
                 {
-                    id: 567,
-                    name: 'bill',
-                    profession: 'developer'
+                    username: 'alice',
+                    content: 'first comment!'
                 },
                 {
-                    id: 568,
-                    name: 'tim',
-                    profession: 'chief'
+                    username: 'Bob',
+                    content: 'second comment!'
                 },
                 {
-                    id: 569,
-                    name: 'phill',
-                    profession: 'plumber'
+                    username: 'Jim',
+                    content: 'Thrid comment!'
                 },
                 {
-                    id: 570,
-                    name: 'batman',
-                    profession: 'batman'
+                    username: 'Fred',
+                    content: 'Forth comment!'
                 },
-            ],
+                {
+                    username: 'creepy craig',
+                    content: 'fith comment!'
+                },
+            ]
         }
     }
 })
-
-const mountedApp = app.mount('#app')
-
