@@ -11,7 +11,7 @@ const app = Vue.createApp({
     },
     methods: {
         addNewTask(newTask){
-            this.task.push(newTask);
+            this.tasks.push(newTask);
         },
         removeTask(task){
             this.tasks.splice(this.tasks.indexOf(task), 1);
@@ -48,6 +48,9 @@ app.component('to-do', {
             } else {
                 this.error = 'The input field cant be empty';
             }
+        },
+        removeTask(task){
+            this.$emit('remove-task', this.newTask)
         }
     },
     template: `
@@ -61,8 +64,17 @@ app.component('to-do', {
             <br>
 
             <div v-for='task in tasks'>
-                {{task}}
+                
+
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{task}}
+                    <button @click="removeTask(task)" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
             </div>
+            <p v-if="error">{{error}}</p>
+            <p v-if="remaining === 0">Add a new Task</p>
         </div>
     `
 })
