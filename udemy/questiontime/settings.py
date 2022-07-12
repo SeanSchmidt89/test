@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'djoser',
     'widget_tweaks',
     'users',
+    'questions',
 ]
 
 MIDDLEWARE = [
