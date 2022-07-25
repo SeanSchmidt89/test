@@ -24,9 +24,14 @@ const App = () => {
     },
   ];
 
+  const addExpenseHandler = (expense) => {
+    pass
+  };
+
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses expenses = {expenses}/>
     </div>
   );
