@@ -11,7 +11,7 @@ function App() {
   const submitHandler = (event) => {
     event.preventDefault();
     const newTodo = {
-      id: Date().getTime(),
+      id: new Date().getTime(),
       text: todo,
     };
     setTodos([...todos, newTodo]);
@@ -22,15 +22,15 @@ function App() {
     <div className="App">
       <h1>todo</h1>
       <form onSubmit={submitHandler}>
-        <input value={todo} type="text" onChange={inputHandler} />
+        <input type="text" onChange={inputHandler} value={todo} />
         <button type="submit">Add Todo</button>
       </form>
-
-      {todos.map((todo) => {
+      {todos.map((todo) => (
         <div key={todo.id}>
           <div>{todo.text}</div>
-        </div>;
-      })}
+        </div>
+      ))}
+
     </div>
   );
 }
