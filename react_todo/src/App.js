@@ -21,8 +21,19 @@ function App() {
   };
 
   const deleteHandler = (id) => {
-    const updatedTodos = [...todos].filter((todo) => todo.id !== id)
-    setTodos(updatedTodos)
+    const updatedTodos = [...todos].filter((todo) => todo.id !== id);
+    setTodos(updatedTodos);
+  };
+
+
+  const toggleComplete = (id) => {
+    const updatedTodos = [...todos].map((todo) => {
+      if (todo.id === id) {
+        todo.completed = !todo.completed
+      }
+      return todo
+    })
+    setTodos(updatedTodos);
   }
 
   return (
@@ -33,12 +44,13 @@ function App() {
         <input type="text" onChange={inputHandler} value={todo} />
         <button type="submit">Add Todo</button>
       </form>
-      {todos.map((todo) => 
+      {todos.map((todo) => (
         <div key={todo.id}>
           <div>{todo.text}</div>
           <button onClick={() => deleteHandler(todo.id)}>Delete</button>
+          <input type="checkbox" checked={todo.completed}  onChange={() => toggleComplete(todo.id)} />
         </div>
-      )}
+      ))}
     </div>
   );
 }
