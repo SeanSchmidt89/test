@@ -8,12 +8,13 @@ const UserList = (props) => {
   return (
     <div>
         <h1>User List Comp</h1>
-      
-        {props.users.map((user) => {
-          <p key={user.id}>
-            Name: {user.name} Age: {user.age}
-          </p>
-        })}
+      <ul>
+        {props.users.map((user) => (
+          <li key={user.id}>
+            {user.name} ({user.age} years old)
+          </li>
+        ))}
+      </ul>
       
       <button onClick={show}>show</button>
     </div>
