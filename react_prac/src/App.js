@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <AddUser onAdd={addUser}/>
-      <UserList list={userList}/>
+      <UserList users={userList}/>
     </div>
   );
 }
