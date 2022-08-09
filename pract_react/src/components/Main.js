@@ -25,10 +25,9 @@ class Main extends Component {
 
   render() {
     //filtering usersList vs searchUser list, saving in filteredUseres
-    const filteredUsers = this.state.users.filter((user) => {
-      return user.name.toLocaleLowerCase().includes(this.state.searchUser)}
+    const filteredUsers = this.state.users.filter((user) =>
+      user.name.toLocaleLowerCase().includes(this.state.searchUser)
     );
-
 
     //in return map over filtered list
     return (
@@ -40,7 +39,7 @@ class Main extends Component {
           placeholder="Search User"
         />
         <button type="submit">Search</button>
-        
+
         {filteredUsers.map((user) => (
           <p key={user.id}>{user.name}</p>
         ))}
