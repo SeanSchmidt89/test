@@ -4,7 +4,7 @@ import Card from "../card/Card.component";
 const CardList = ({ monsters }) => (
   <div className="card-list">
     {monsters.map((monster) => {
-      return <Card monster={monster} />;
+      return <Card monster={monster} key={monster.id}/>;
     })}
   </div>
 );
