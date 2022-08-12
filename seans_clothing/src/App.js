@@ -1,14 +1,17 @@
 import React from "react";
-import "./categories.styles.scss";
-import CategoryList from "./components/category-list/category-list.component";
+import { Routes, Route } from "react-router-dom";
+import Home from "./routes/home/home.component";
+import Navigation from "./routes/navigation/navigation.component";
+import SignIn from "./routes/sign-in/sign-in.component";
 
 const App = () => {
-  
-
   return (
-    <div>
-    <CategoryList />
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path='sign-in' element={<SignIn />}/>
+      </Route>
+    </Routes>
   );
 };
 
