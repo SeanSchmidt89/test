@@ -17,8 +17,6 @@ function App() {
         todos={todos}
       />
       <TodoList
-        inputText={inputText}
-        setInputText={setInputText}
         setTodos={setTodos}
         todos={todos}
       />
