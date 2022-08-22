@@ -1,50 +1,29 @@
-import React from "react";
-import { Component } from "react";
-import UserList from "./components/UserList";
-import Search from "./components/Search";
+import React, { useState } from "react";
+import "./App.css";
+import Form from "./components/Form";
+import TodoList from "./components/TodoList";
 
-class App extends Component {
-  constructor() {
-    super();
+function App() {
+  const [inputText, setInputText] = useState("");
+  const [todos, setTodos] = useState([]);
 
-    this.state = {
-      users: [
-        {
-          id: Math.random().toString(),
-          name: "Sean",
-        },
-        {
-          id: Math.random().toString(),
-          name: "Timmy",
-        },
-        {
-          id: Math.random().toString(),
-          name: "Fred",
-        },
-      ],
-      searchList: "",
-    };
-  }
-
-  onSearchHandler = (event) => {
-    const searchList = event.target.value.toLocaleLowerCase();
-    this.setState(() => {
-      return { searchList };
-    });
-  };
-
-  render() {
-    const filteredList = this.state.users.filter((user) => {
-      return user.name.toLocaleLowerCase().includes(this.state.searchList);
-    });
-
-    return (
-      <div className="App">
-        <Search onChangeHandler={this.onSearchHandler} placeholder='Search User'/>
-        <UserList users={filteredList} />
-      </div>
-    );
-  }
+  return (
+    <div className="App">
+      <h1>Seans Todo App</h1>
+      <Form
+        inputText={inputText}
+        setInputText={setInputText}
+        setTodos={setTodos}
+        todos={todos}
+      />
+      <TodoList
+        inputText={inputText}
+        setInputText={setInputText}
+        setTodos={setTodos}
+        todos={todos}
+      />
+    </div>
+  );
 }
 
 export default App;
