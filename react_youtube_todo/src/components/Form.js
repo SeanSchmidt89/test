@@ -14,7 +14,6 @@ const Form = ({ inputText, setInputText, setTodos, todos }) => {
     };
     setTodos((prevList) => [...prevList, todo]);
     setInputText("");
-    console.log(todos);
   };
 
   return (
