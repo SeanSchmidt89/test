@@ -1,6 +1,6 @@
 import React from "react";
 
-const Form = ({ inputText, setInputText, setTodos, todos }) => {
+const Form = ({ inputText, setInputText, setTodos, todos, setFilter }) => {
   const inputHandler = (event) => {
     setInputText(event.target.value);
   };
@@ -16,6 +16,9 @@ const Form = ({ inputText, setInputText, setTodos, todos }) => {
     setInputText("");
   };
 
+  const filterHandler = (event) => {
+    setFilter(event.target.value);
+  };
   return (
     <form>
       <input
@@ -28,7 +31,7 @@ const Form = ({ inputText, setInputText, setTodos, todos }) => {
         <i className="fas fa-plus-square"></i>
       </button>
       <div className="select">
-        <select name="todos" className="filter-todo">
+        <select onChange={filterHandler} name="todos" className="filter-todo">
           <option value="all">All</option>
           <option value="completed">Completed</option>
           <option value="uncompleted">Uncompleted</option>
