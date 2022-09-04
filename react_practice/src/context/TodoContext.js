@@ -21,7 +21,9 @@ export const TodoProvider = ({ children }) => {
     setInputText("");
   };
   return (
-    <TodoContext.Provider value={{ todos, inputText, inputHandler, submitHandler }}>
+    <TodoContext.Provider
+      value={{ todos, inputText, todos, setTodos, inputHandler, submitHandler }}
+    >
       {children}
     </TodoContext.Provider>
   );
