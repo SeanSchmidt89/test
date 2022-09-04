@@ -1,12 +1,17 @@
-
-import './App.css';
+import React from "react";
+import Form from "./components/Form";
+import TodoList from "./components/TodoList";
+import { TodoProvider } from "./context/TodoContext";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <h1>
-        practice
-      </h1>
+      <TodoProvider>
+        <h1>Seans Todo</h1>
+        <Form />
+        <TodoList />
+      </TodoProvider>
     </div>
   );
 }
