@@ -15,15 +15,13 @@ export const TodoProvider = ({ children }) => {
     const todo = {
       id: Math.floor(Math.random() * 10000),
       title: inputText,
-      completed: false,
+      complete: false,
     };
-    setTodos((prevList) => [...prevList, todo]);
+    setTodos((preList) => [...preList, todo]);
     setInputText("");
   };
   return (
-    <TodoContext.Provider
-      value={{ todos, inputText, todos, setTodos, inputHandler, submitHandler }}
-    >
+    <TodoContext.Provider value={{ todos, inputText, setInputText, setTodos, inputHandler, submitHandler }}>
       {children}
     </TodoContext.Provider>
   );
