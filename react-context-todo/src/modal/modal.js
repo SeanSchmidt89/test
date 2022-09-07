@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import ReactDom from "react-dom";
 import TodoContext from "../context/todo-context";
 
 const Modal = () => {
@@ -33,17 +34,20 @@ const Modal = () => {
   };
 
   if (!openModal) return null;
-  return (
-    <div>
-      Modal
-      <input
-        onChange={inputHandler}
-        value={inputText}
-        placeholder="Update Todo"
-      />
-      <button onClick={updateHandler}>Update</button>
-      <button onClick={closeHandler}>Close</button>
-    </div>
+  return ReactDom.createPortal(
+    <div className="overlay">
+      <div className="modalContainer">
+        <h3>Update Todo</h3>
+        <input
+          onChange={inputHandler}
+          value={inputText}
+          placeholder="Update Todo"
+        />
+        <button onClick={updateHandler}>Add</button>
+        <button onClick={closeHandler}>Close</button>
+      </div>
+    </div>,
+    document.getElementById('portal')
   );
 };
 
