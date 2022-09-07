@@ -5,6 +5,8 @@ const TodoContext = createContext();
 export const TodoProvider = ({ children }) => {
   const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState([]);
+  const [openModal, setOpenModal] = useState(false);
+  const [updateTodo, setUpdateTodo] = useState(null);
 
   const inputHandler = (e) => {
     setInputText(e.target.value);
@@ -21,7 +23,20 @@ export const TodoProvider = ({ children }) => {
     setInputText("");
   };
   return (
-    <TodoContext.Provider value={{ todos, inputText, setInputText, setTodos, inputHandler, submitHandler }}>
+    <TodoContext.Provider
+      value={{
+        todos,
+        inputText,
+        setInputText,
+        setTodos,
+        inputHandler,
+        submitHandler,
+        openModal,
+        setOpenModal,
+        updateTodo,
+        setUpdateTodo,
+      }}
+    >
       {children}
     </TodoContext.Provider>
   );
