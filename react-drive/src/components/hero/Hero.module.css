@@ -1,0 +1,52 @@
+.hero {
+  background: url("https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80")
+    no-repeat center/cover;
+  display: flex;
+  height: 500px;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 700px;
+  width: 100%;
+  margin: auto;
+  margin-top: 10%;
+  padding: 6px 15px;
+  background-color: rgba(247, 247, 247, 0.8);
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 8px 24px;
+  border-radius: 20px;
+}
+
+form label {
+  font-size: 0.8rem;
+  padding: 8px;
+}
+
+.text,
+.form,
+.until {
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  background-color: transparent;
+  border: none;
+  font-family: "Poppins", "san-serif";
+}
+
+form input:focus {
+  outline: none;
+}
+
+form .input_text {
+  width: 300px;
+  font-size: 1rem;
+}
+
+.search_btn button {
+  display: none;
+}
