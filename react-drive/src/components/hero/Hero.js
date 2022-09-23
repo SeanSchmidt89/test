@@ -10,7 +10,7 @@ const Hero = () => {
           <label>Where</label>
           <input className={styles.text_input} type="text" placeholder="Search Location" />
         </div>
-        <div className={styles.form}>
+        <div className={styles.from}>
           <span className={styles.border}></span>
           <label>From</label>
           <input type="date" />
@@ -21,8 +21,8 @@ const Hero = () => {
           <input type="date" />
         </div>
         <div className={styles.search_btn}>
-          <AiOutlineSearch />
-          <button>Search for cars</button>
+          <AiOutlineSearch className={styles.icon}/>
+          <button className={styles.btn}>Search for cars</button>
         </div>
       </form>
     </div>

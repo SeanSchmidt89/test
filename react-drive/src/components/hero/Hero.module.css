@@ -26,10 +26,16 @@ form label {
 }
 
 .text,
-.form,
+.from,
 .until {
   display: flex;
   flex-direction: column;
+}
+
+.from,
+.until {
+  border-left: 1px solid;
+  padding-left: 12px;
 }
 
 form input {
@@ -42,11 +48,75 @@ form input:focus {
   outline: none;
 }
 
-form .input_text {
+form .text_input {
   width: 300px;
-  font-size: 1rem;
+  font-size: 1.2rem;
+}
+
+.search_btn {
+  display: flex;
+  align-items: center;
 }
 
 .search_btn button {
   display: none;
+}
+
+@media screen and (max-width: 720px) {
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    height: 60%;
+    padding-bottom: 10px;
+    margin: auto 1.5rem;
+  }
+  .text,
+  .from,
+  .until {
+    width: 100%;
+    padding: 0.2rem;
+    border-left: none;
+  }
+
+  .from input,
+  .until input {
+    margin-right: 80%;
+  }
+
+  form label {
+    padding: 0.4rem 0;
+  }
+
+  .border {
+    border-top: 1px solid;
+    padding: 8px;
+  }
+
+  .search_btn {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .search_btn .btn {
+    display: block;
+    background-color: blue;
+    color: aliceblue;
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .search_btn .btn:hover {
+    background-color: rgb(113, 129, 235);
+    transition: background-color 1s;
+  }
+
+  .icon {
+    display: none;
+  }
 }
