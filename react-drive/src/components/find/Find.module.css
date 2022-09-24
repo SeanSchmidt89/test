@@ -21,3 +21,12 @@
   left: 0;
   right: 0;
 }
+
+.text_bg p {
+  font-size: 1.4rem;
+  margin-top: -.6rem;
+}
+
+.slider_container {
+  padding: 5rem 0 
+}

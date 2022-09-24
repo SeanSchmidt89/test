@@ -17,7 +17,17 @@ const Find = () => {
         </div>
       </div>
       <div className={styles.slider}>
-
+        <Swiper
+        modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={10}
+          slidesPerView={5}
+          navigation
+          breakpoints={{}}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          <SwiperSlide></SwiperSlide>
+        </Swiper>
       </div>
     </div>
   );
