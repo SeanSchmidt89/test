@@ -29,20 +29,5 @@ code {
     monospace;
 }
 
-.btn {
-  padding: 12px 32px;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  background: transparent;
-  color: #fff;
-  border: 1px solid #fff;
-  cursor: pointer;
-}
 
-.btn-light {
-  background: rgba(255, 255, 255, 0.2);
-}
 
-.btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-}

@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Video from "../components/video/Video";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div>
+      <Video />
+    </div>
+  );
+};
 
-export default Home
+export default Home;
