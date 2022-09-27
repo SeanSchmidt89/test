@@ -40,7 +40,7 @@
     text-transform: uppercase;
     background: transparent;
     color: #fff;
-    border: 1px solid #fff;
+    border: 2px solid #fff;
     cursor: pointer;
   }
 
@@ -52,7 +52,7 @@
     font-size: 1.2rem;
     text-transform: uppercase;
     color: #fff;
-    border: 1px solid #fff;
+    border: 2px solid #fff;
     cursor: pointer;
   }
   
@@ -62,4 +62,15 @@
 
 .btnLight:hover {
     background: transparent;
+}
+
+@media screen and (max-width: 750px) {
+    .content p {
+        font-size: 1.3rem;
+        padding: .4rem;
+    }
+
+    .hero .content h1 {
+        font-size: 3.8rem;
+    }
 }
