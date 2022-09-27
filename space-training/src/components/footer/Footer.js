@@ -23,14 +23,13 @@ const Footer = () => (
           </div>
         </div>
         <div className={styles.phone}>
-          <h4>
-            <FaPhone size={20} style={{ marginRight: "2rem" }} />
-            1-800-123-4567
-          </h4>
+          <FaPhone size={20} style={{ marginRight: "2rem" }} />
+          <h4>1-800-123-4567</h4>
         </div>
         <div className={styles.email}>
+          <FaMailBulk size={20} style={{ marginRight: "2rem" }} />
           <h4>
-            <FaMailBulk size={20} style={{ marginRight: "2rem" }} />
+            <p>seanschmidt1989@gmail.com</p>
           </h4>
         </div>
       </div>
