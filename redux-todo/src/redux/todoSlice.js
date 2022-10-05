@@ -29,17 +29,3 @@ const todoSlice = createSlice({
 export const { addTodo, toggleComplete, deleteTodo } = todoSlice.actions;
 
 export default todoSlice.reducer;
-
-
-
-import {createSlice} from '@reduxjs/toolkit'
-
-const todoSlice1 = createSlice({
-  name: 'todo',
-  initialState: initialState,
-  reducers: {
-    addtodo: (state, action) => {
-
-    }
-  }
-})
