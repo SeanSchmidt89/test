@@ -1,0 +1,13 @@
+.card-container {
+  background-color: black;
+  color: white;
+}
+
+.upper-card {
+    height: 20rem;
+}
+
+.upper-card img{
+    width: 100%;
+    height: 20rem;
+}
