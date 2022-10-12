@@ -13,7 +13,7 @@ function App() {
       .catch((error) => {
         console.log("ERROR", error);
       });
-    dispatch(UserSliceActions.addUser(response));
+    dispatch(UserSliceActions.addUser(response.data.results[0]));
   };
 
   //response.data.results[0]

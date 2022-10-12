@@ -9,12 +9,7 @@ const UserSlice = createSlice({
   initialState: initialState,
   reducers: {
     addUser: (state, action) => {
-      if (action.payload.status === 200) {
-        state.user = action.payload.data.results[0];
-        console.log("worked");
-      } else {
-        console.log('didnt work')
-      }
+      state.user = action.payload;
     },
   },
 });

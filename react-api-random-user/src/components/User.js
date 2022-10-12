@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 
 const User = () => {
     const user = useSelector(state => state.user)
+    console.log(user)
   return (
     <>
       {user.picture ? <div className="user-container">
