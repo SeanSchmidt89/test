@@ -2,6 +2,13 @@
 
 .card-item {
   background-color: $secondary-color;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.3s;
+  }
 }
 
 .card-top {
@@ -13,8 +20,8 @@
   }
 }
 
-.card-bottom{
-    padding: 20px
+.card-bottom {
+  padding: 20px;
 }
 
 .card-info {
