@@ -1,0 +1,10 @@
+
+
+.top {
+    width: 300px;
+}
+
+.top img {
+    width: 300px;
+    object-fit: cover;
+}
