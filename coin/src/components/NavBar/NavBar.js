@@ -32,7 +32,7 @@ const NavBar = () => {
           <button className="btn">Connect Wallet</button>
         </div>
         <div className="hamburger" onClick={toggleClick}>
-          {click ? (
+          {!click ? (
             <FaBars size={20} style={{ color: "#333" }} />
           ) : (
             <FaTimes size={20} style={{ color: "#333" }} />
