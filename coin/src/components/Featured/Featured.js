@@ -1,22 +1,24 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { FiArrowUpRight, FiArrowDown } from "react-icons/fi";
-import BTC from "../../assets/btc-img.png";
 import { useDispatch, useSelector } from "react-redux";
 import { cryptoSliceActions } from "../../store/cryptoSlice";
 import "./Featured.css";
 
 const Featured = () => {
   const dispatch = useDispatch();
-  const cryptoList = useSelector(state => state.crypto.crypto)
+  const data = useSelector((state) => state.crypto.crypto);
+
+  const url =
+    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false";
   useEffect(() => {
     axios
-      .get(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false"
-      )
+      .get(url)
       .then((response) => {
-        console.log(response.data);
         dispatch(cryptoSliceActions.add(response.data));
+      })
+      .catch((error) => {
+        console.log(error);
       });
   }, [dispatch]);
   return (
@@ -29,19 +31,20 @@ const Featured = () => {
         </div>
         <div className="right">
           <div className="top">
-            <img src={BTC} alt="" />
+            <img src={data[1].image} alt={data[1].id} />
           </div>
           <div>
-            <h5>Bitcoin</h5>
-            <p>$49,000</p>
+            <h5>{data[1].id}</h5>
+            <p>${data[1].current_price.toLocaleString()}</p>
           </div>
           <span>
             <FiArrowUpRight />
-            2.5%
+            {data[1].price_change_percentage_24h}
           </span>
         </div>
       </div>
-      {cryptoList && cryptoList.map((item) => <p key={item.id}>Name: {item.id}</p>)}
+      {data &&
+        data.map((item) => <p key={item.id}>Name: {item.id}</p>)}
     </div>
   );
 };
