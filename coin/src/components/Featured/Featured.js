@@ -1,19 +1,19 @@
 import axios from "axios";
 import React, { useEffect } from "react";
-import { FiArrowUpRight, FiArrowDown } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { cryptoSliceActions } from "../../store/cryptoSlice";
+import Coin from "../Coin/Coin";
 import "./Featured.css";
 
 const Featured = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.crypto.crypto);
 
-  const url =
-    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false";
   useEffect(() => {
     axios
-      .get(url)
+      .get(
+        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=12&page=1&sparkline=false"
+      )
       .then((response) => {
         dispatch(cryptoSliceActions.add(response.data));
       })
@@ -21,6 +21,7 @@ const Featured = () => {
         console.log(error);
       });
   }, [dispatch]);
+
   return (
     <div className="featured">
       <div className="container">
@@ -30,23 +31,21 @@ const Featured = () => {
           <button className="btn">See More Coins</button>
         </div>
         <div className="right">
-          <div className="top">
-            <img src={data[1].image} alt={data[1].id} />
-          </div>
-          <div>
-            <h5>{data[1].id}</h5>
-            <p>${data[1].current_price.toLocaleString()}</p>
-          </div>
-          <span>
-            <FiArrowUpRight />
-            {data[1].price_change_percentage_24h}
-          </span>
+          {data.length > 0 &&
+            data.map((item) => <Coin key={item.id} data={item} />)}
         </div>
       </div>
-      {data &&
-        data.map((item) => <p key={item.id}>Name: {item.id}</p>)}
     </div>
   );
 };
 
 export default Featured;
+
+
+const str = '2 6 4 8 2 1 0 8 6 5 8'
+const ar = str.split(' ')
+const sortedAr = ar.sort((a, b) => a - b)
+const low = sortedAr.slice(-1)
+const high = sortedAr.slice(1)
+console.log(low)
+console.log(high)

@@ -1,0 +1,26 @@
+.coin {
+  padding: 0.6rem 0.4rem 0.4rem 0.6rem;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.top {
+  width: 23px;
+}
+
+.top img {
+  width: 23px;
+}
+
+.coin h5 {
+  font-size: 0.7rem;
+}
+
+.coin p {
+  font-size: 0.7rem;
+}
+
+.coin span {
+  font-size: 0.6rem;
+}

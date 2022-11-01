@@ -1,10 +1,17 @@
-
-
-.top {
-    width: 300px;
+.featured .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2rem;
 }
 
-.top img {
-    width: 300px;
-    object-fit: cover;
+
+.featured .right {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+}
+
+.left h2 {
+    font-size: 1.4rem;
 }
