@@ -40,12 +40,3 @@ const Featured = () => {
 };
 
 export default Featured;
-
-
-const str = '2 6 4 8 2 1 0 8 6 5 8'
-const ar = str.split(' ')
-const sortedAr = ar.sort((a, b) => a - b)
-const low = sortedAr.slice(-1)
-const high = sortedAr.slice(1)
-console.log(low)
-console.log(high)

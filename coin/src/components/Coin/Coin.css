@@ -1,9 +1,17 @@
 .coin {
-  padding: 0.6rem 0.4rem 0.4rem 0.6rem;
+  padding: 0.9rem 0.9rem;
   border: 1px solid rgb(221, 221, 221);
   border-radius: 16px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 110px;
+  height: 110px;
 }
+
+.coin:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+}
+
 
 .top {
   width: 23px;
@@ -22,5 +30,15 @@
 }
 
 .coin span {
-  font-size: 0.6rem;
+  font-size: 0.7rem;
+}
+
+.red {
+  display: flex;
+  color: red;
+}
+
+.green {
+  display: flex;
+  color: green;
 }

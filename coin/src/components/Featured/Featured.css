@@ -1,8 +1,11 @@
 .featured .container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
     align-items: center;
-    margin: 0 2rem;
+    margin: 4rem auto;
+    padding: 1rem;
+
 }
 
 
@@ -14,4 +17,28 @@
 
 .left h2 {
     font-size: 1.4rem;
+}
+
+@media screen and (max-width: 940px){
+    .featured .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem auto;
+    }
+
+    .featured .left {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .featured .right {
+        padding: 2rem;
+    }
+
+    .left button {
+    }
 }
