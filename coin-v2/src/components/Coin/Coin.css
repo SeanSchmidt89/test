@@ -9,14 +9,23 @@
   border-radius: 8px;
 }
 
+.coin-row:hover {
+  box-shadow: 0px 0px 9px #f4f4f4;
+  cursor: pointer;
+  transform: scale(1.015);
+  transition: 0.4s ease-in-out;
+}
+
+.img-symbol img {
+  height: 30px;
+  width: auto;
+  margin-right: 8px;
+}
+
 .img-symbol {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.img-symbol img {
-  width: 20px;
 }
 
 .img-symbol p {

@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { coinSliceActions } from "./store/coinSlice";
-import Coins from "./components/Coins/Coins";
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/Home/Home";
+import About from "./components/About/About";
 import axios from "axios";
-import NavBar from "./components/NavBar/NavBar";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,10 +25,10 @@ function App() {
 
   return (
     <div className="App">
-      <div className="container">
-        <NavBar />
-        <Coins />
-      </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
     </div>
   );
 }
