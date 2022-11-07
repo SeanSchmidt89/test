@@ -1,0 +1,24 @@
+.coin-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #26272b;
+  box-shadow: 0px 0px 12px #18191b;
+  margin: 2rem 1rem;
+  padding: 0.3rem 1rem;
+  border-radius: 8px;
+}
+
+.img-symbol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-symbol img {
+  width: 20px;
+}
+
+.img-symbol p {
+  padding: 0 1rem;
+}

@@ -1,12 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import CoinItem from "../CoinItem/CoinItem";
+import Coin from "../Coin/Coin";
 import "./Coins.css";
 
 const Coins = () => {
   const coins = useSelector((state) => state.coins.coins);
   return (
-    <div className="coin-container">
+    <div className="container">
       <div>
         <div className="heading">
           <p>#</p>
@@ -18,7 +18,7 @@ const Coins = () => {
         </div>
         {coins.length > 0 &&
           coins.map((coin) => {
-            return <CoinItem key={coin.id} coin={coin} />;
+            return <Coin key={coin.id} coin={coin} />;
           })}
       </div>
     </div>

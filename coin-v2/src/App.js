@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { coinSliceActions } from "./store/coinSlice";
 import Coins from "./components/Coins/Coins";
 import axios from "axios";
+import NavBar from "./components/NavBar/NavBar";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,9 +24,8 @@ function App() {
 
   return (
     <div className="App">
-      APP
       <div className="container">
-        <h2>List of Coins</h2>
+        <NavBar />
         <Coins />
       </div>
     </div>
