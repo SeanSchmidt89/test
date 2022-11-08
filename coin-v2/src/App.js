@@ -18,7 +18,6 @@ function App() {
     axios
       .get(url)
       .then((response) => {
-        console.log(response.data);
         dispatch(coinSliceActions.topCoins(response.data));
       })
       .catch((error) => {

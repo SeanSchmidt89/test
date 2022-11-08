@@ -17,6 +17,7 @@ const Coins = () => {
           <p className="hide-moblie">Volume</p>
           <p className="hide-moblie">Mkt Cap</p>
         </div>
+        
         {coins.length > 0 &&
           coins.map((coin) => {
             return <Coin key={coin.id} coin={coin} />;
