@@ -4,6 +4,7 @@ import { coinSliceActions } from "./store/coinSlice";
 import { Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Coins from "./components/Coins/Coins";
+import CoinInfo from "./components/CoinInfo/CoinInfo";
 import About from "./components/About/About";
 import axios from "axios";
 import { FaPowerOff } from "react-icons/fa";
@@ -27,9 +28,12 @@ function App() {
 
   return (
     <div className="App">
-    <NavBar />
+      <NavBar />
       <Routes>
         <Route path="/" element={<Coins />} />
+        <Route path="/coin-info" element={<CoinInfo />}>
+          <Route path=":coinId" element={<CoinInfo />} />
+        </Route>
         <Route path="/about" element={<About />} />
       </Routes>
     </div>
