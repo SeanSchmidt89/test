@@ -2,9 +2,11 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { coinSliceActions } from "./store/coinSlice";
 import { Route, Routes } from "react-router-dom";
-import Home from "./components/Home/Home";
+import NavBar from "./components/NavBar/NavBar";
+import Coins from "./components/Coins/Coins";
 import About from "./components/About/About";
 import axios from "axios";
+import { FaPowerOff } from "react-icons/fa";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,10 +27,11 @@ function App() {
 
   return (
     <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
+    <NavBar />
+      <Routes>
+        <Route path="/" element={<Coins />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </div>
   );
 }

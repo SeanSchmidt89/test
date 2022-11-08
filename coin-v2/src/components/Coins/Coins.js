@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import Coin from "../Coin/Coin";
+import { Link } from "react-router-dom";
 import "./Coins.css";
 
 const Coins = () => {
@@ -21,6 +22,7 @@ const Coins = () => {
             return <Coin key={coin.id} coin={coin} />;
           })}
       </div>
+      <Link to='/about'>About</Link>
     </div>
   );
 };
