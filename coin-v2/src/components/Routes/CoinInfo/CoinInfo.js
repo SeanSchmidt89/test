@@ -38,7 +38,7 @@ const CoinInfo = () => {
             </div>
             <div className="coin-price">
               {coin.market_data ? (
-                <h1>{coin.market_data.current_price}</h1>
+                <h1>{coin.market_data.current_price.usd}</h1>
               ) : null}
             </div>
           </div>
@@ -58,22 +58,76 @@ const CoinInfo = () => {
             <tbody>
               <tr>
                 <td>
-                  {coin.market_data.price_change_percentage_1h_in_currency.usd}
+                  {coin.market_data ? (
+                    <p>
+                      {
+                        coin.market_data.price_change_percentage_1h_in_currency
+                          .usd
+                      }
+                    </p>
+                  ) : (
+                    <p>-</p>
+                  )}
                 </td>
                 <td>
-                  {coin.market_data.price_change_percentage_24h_in_currency.usd}
+                  {coin.market_data ? (
+                    <p>
+                      {
+                        coin.market_data.price_change_percentage_24h_in_currency
+                          .usd
+                      }
+                    </p>
+                  ) : (
+                    <p>-</p>
+                  )}
                 </td>
                 <td>
-                  {coin.market_data.price_change_percentage_7d_in_currency.usd}
+                  {coin.market_data ? (
+                    <p>
+                      {
+                        coin.market_data.price_change_percentage_7d_in_currency
+                          .usd
+                      }
+                    </p>
+                  ) : (
+                    <p>-</p>
+                  )}
                 </td>
                 <td>
-                  {coin.market_data.price_change_percentage_14d_in_currency.usd}
+                  {coin.market_data ? (
+                    <p>
+                      {
+                        coin.market_data.price_change_percentage_14d_in_currency
+                          .usd
+                      }
+                    </p>
+                  ) : (
+                    <p>-</p>
+                  )}
                 </td>
                 <td>
-                  {coin.market_data.price_change_percentage_30d_in_currency.usd}
+                  {coin.market_data ? (
+                    <p>
+                      {
+                        coin.market_data.price_change_percentage_30d_in_currency
+                          .usd
+                      }
+                    </p>
+                  ) : (
+                    <p>-</p>
+                  )}
                 </td>
                 <td>
-                  {coin.market_data.price_change_percentage_1y_in_currency.usd}
+                  {coin.market_data ? (
+                    <p>
+                      {
+                        coin.market_data.price_change_percentage_1y_in_currency
+                          .usd
+                      }
+                    </p>
+                  ) : (
+                    <p>-</p>
+                  )}
                 </td>
               </tr>
             </tbody>
@@ -84,21 +138,37 @@ const CoinInfo = () => {
             <div className="left">
               <div className="row">
                 <h4>24 Hour Low</h4>
-                <p>{coin.market_data.low_24h.usd}</p>
+                {coin.market_data ? (
+                  <p>{coin.market_data.low_24h.usd}</p>
+                ) : (
+                  <p>-</p>
+                )}
               </div>
               <div className="row">
                 <h4>24 Hour High</h4>
-                <p>{coin.market_data.high_24h.usd}</p>
+                {coin.market_data ? (
+                  <p>{coin.market_data.high_24h.usd}</p>
+                ) : (
+                  <p>-</p>
+                )}
               </div>
             </div>
             <div className="right">
               <div className="row">
                 <h4>Market Cap</h4>
-                <p>{coin.market_data.market_cap.usd}</p>
+                {coin.market_data ? (
+                  <p>{coin.market_data.market_cap.usd}</p>
+                ) : (
+                  <p>-</p>
+                )}
               </div>
               <div className="row">
                 <h4>Circulating Supply</h4>
-                <p>{coin.market_data.circulating_supply.usd}</p>
+                {coin.market_data ? (
+                  <p>{coin.market_data.circulating_supply.usd}</p>
+                ) : (
+                  <p>-</p>
+                )}
               </div>
             </div>
           </div>
@@ -106,7 +176,7 @@ const CoinInfo = () => {
         <div className="content">
           <div className="about">
             <h3>About</h3>
-            <p>{coin.description.en}</p>
+            {coin.description ? <p>{coin.description.en}</p> : <p>-</p>}
           </div>
         </div>
       </div>
@@ -115,3 +185,13 @@ const CoinInfo = () => {
 };
 
 export default CoinInfo;
+
+// //53.40
+// "price_change_24h": -1977.2551344444,
+//         "price_change_percentage_24h": -9.98861,
+//         "price_change_percentage_7d": -13.03977,
+//         "price_change_percentage_14d": -11.33262,
+//         "price_change_percentage_30d": -8.38283,
+//         "price_change_percentage_60d": -16.5815,
+//         "price_change_percentage_200d": -55.18296,
+//         "price_change_percentage_1y": -73.64888,
