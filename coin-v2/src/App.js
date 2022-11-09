@@ -4,7 +4,7 @@ import { coinSliceActions } from "./store/coinSlice";
 import { Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Coins from "./components/Coins/Coins";
-import CoinInfo from "./components/CoinInfo/CoinInfo";
+import CoinInfo from "./components/Routes/CoinInfo/CoinInfo";
 import About from "./components/About/About";
 import axios from "axios";
 import { FaPowerOff } from "react-icons/fa";
