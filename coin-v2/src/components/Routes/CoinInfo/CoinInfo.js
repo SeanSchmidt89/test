@@ -185,13 +185,3 @@ const CoinInfo = () => {
 };
 
 export default CoinInfo;
-
-// //53.40
-// "price_change_24h": -1977.2551344444,
-//         "price_change_percentage_24h": -9.98861,
-//         "price_change_percentage_7d": -13.03977,
-//         "price_change_percentage_14d": -11.33262,
-//         "price_change_percentage_30d": -8.38283,
-//         "price_change_percentage_60d": -16.5815,
-//         "price_change_percentage_200d": -55.18296,
-//         "price_change_percentage_1y": -73.64888,

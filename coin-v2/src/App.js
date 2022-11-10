@@ -6,7 +6,10 @@ import NavBar from "./components/NavBar/NavBar";
 import Coins from "./components/Coins/Coins";
 import CoinInfo from "./components/Routes/CoinInfo/CoinInfo";
 import About from "./components/About/About";
+import Login from "./components/Routes/Login/Login";
+import SignUp from "./components/Routes/SignUp/SignUp";
 import axios from "axios";
+import AuthContextProvider from "./context/AuthContext";
 import { FaPowerOff } from "react-icons/fa";
 
 function App() {
@@ -27,14 +30,18 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Coins />} />
-        <Route path="/coin-info" element={<CoinInfo />}>
-          <Route path=":coinId" element={<CoinInfo />} />
-        </Route>
-        <Route path="/about" element={<About />} />
-      </Routes>
+      <AuthContextProvider>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Coins />} />
+          <Route path="/coin-info" element={<CoinInfo />}>
+            <Route path=":coinId" element={<CoinInfo />} />
+          </Route>
+          <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/SignUp" element={<SignUp />} />
+        </Routes>
+      </AuthContextProvider>
     </div>
   );
 }

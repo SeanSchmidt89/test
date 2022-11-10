@@ -1,8 +1,15 @@
 .navbar {
+  max-width: 1250px;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
 }
 
 .icon {
@@ -12,4 +19,14 @@
 
 .purple {
   color: #6900ff;
+}
+
+.right button {
+  margin: 0 0.4rem;
+  width: 75px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: #6900ff;
+  color: whitesmoke;
+  cursor: pointer;
 }
