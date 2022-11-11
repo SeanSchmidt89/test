@@ -72,3 +72,13 @@ h2 {
   font-weight: 500;
   text-decoration: underline;
 }
+
+.error {
+  background-color: rgb(210, 65, 65);
+  color: white;
+  height: 40px;
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: 500;
+  border-radius: 4px;
+}
