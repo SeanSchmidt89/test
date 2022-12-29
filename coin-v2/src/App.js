@@ -1,15 +1,17 @@
 import React, { useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { coinSliceActions } from "./store/coinSlice";
-import { Route, Routes } from "react-router-dom";
+import axios from "axios";
 import NavBar from "./components/NavBar/NavBar";
 import Coins from "./components/Coins/Coins";
 import CoinInfo from "./components/Routes/CoinInfo/CoinInfo";
 import About from "./components/About/About";
 import Login from "./components/Routes/Login/Login";
 import SignUp from "./components/Routes/SignUp/SignUp";
-import axios from "axios";
+import Account from "./components/Routes/Account/Account";
 import AuthContextProvider from "./context/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import { FaPowerOff } from "react-icons/fa";
 
 function App() {
@@ -39,7 +41,15 @@ function App() {
           </Route>
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route
+            path="/account"
+            element={
+              <ProtectedRoute>
+                <Account />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </AuthContextProvider>
     </div>
