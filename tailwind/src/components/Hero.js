@@ -11,9 +11,16 @@ const Hero = () => {
       <div className="bg-black/40 absolute top-0 left-0 w-full h-screen" />
       <div className="absolute top-0 w-full h-full flex flex-col justify-center text-white ">
         <div className="md:left-[10%] max-w-[1100px] m-auto absolute p4">
-          <h1 className="font-bold text-5xl md:text-7xl drop-shadow-2xl">Miami Beach</h1>
-          <p className="max-w-[600px] drop-shadow-2xl py-2 text-xl">Spring Break Getaways</p>
-          <p>lorem </p>
+          <h1 className="font-bold text-5xl md:text-7xl drop-shadow-2xl">
+            Miami Beach
+          </h1>
+          <p className="max-w-[600px] drop-shadow-2xl py-2 text-xl">
+            Spring Break Getaways
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+          </p>
           <button className="bg-white text-black">Reserve Now</button>
         </div>
       </div>
