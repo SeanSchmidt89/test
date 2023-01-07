@@ -11,7 +11,7 @@ const NavBar = () => {
         className="fixed top-4 right-4 z-20 text-white cursor-pointer"
         size={25}
       />
-      {/* <div className="aboslute top-0 h-screen left-[-200%]">
+      <div className="aboslute top-0 h-screen left-[-200%]">
         <ul className="flex flex-col fixed w-full h-full items-center justify-center">
           <li className="font-bold text-3xl p-7 cursor-pointer">Home</li>
           <li className="font-bold text-3xl p-7 cursor-pointer">
@@ -23,7 +23,7 @@ const NavBar = () => {
           <li className="font-bold text-3xl p-7 cursor-pointer">Amenitites</li>
           <li className="font-bold text-3xl p-7 cursor-pointer">Rooms</li>
         </ul>
-      </div> */}
+      </div>
     </div>
   );
 };
