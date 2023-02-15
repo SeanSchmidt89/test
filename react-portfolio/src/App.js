@@ -1,10 +1,11 @@
-import SideNav from "./components/SIdeNav/SideNav";
+import SideNav from "./components/SideNav/SideNav";
+import Main from "./components/Main/Main";
 
 function App() {
   return (
     <div className="App">
-      app
       <SideNav />
+      <Main />
     </div>
   );
 }

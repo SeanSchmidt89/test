@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import "./SideNav.css";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { AiOutlineHome } from "react-icons/ai";
+import {
+  AiOutlineHome,
+  AiOutlineProject,
+  AiOutlineMail,
+  AiFillGithub,
+} from "react-icons/ai";
+import { GrDocumentText } from "react-icons/gr";
 
 const SideNav = () => {
   const [nav, setNav] = useState(false);
@@ -12,27 +18,48 @@ const SideNav = () => {
     <div className="sidenav">
       <GiHamburgerMenu className="hamburger" onClick={navHandler} />
       {nav ? (
-        <div className="nav-open">
+        <div className="small-nav">
           <a href="#main">
             <AiOutlineHome size={20} />
             <span>Home</span>
           </a>
           <a href="#main">
-            <AiOutlineHome size={20} />
+            <AiOutlineProject size={20} />
             <span>Projects</span>
           </a>
           <a href="#main">
-            <AiOutlineHome size={20} />
+            <GrDocumentText size={20} />
             <span>Resume</span>
           </a>
           <a href="#main">
-            <AiOutlineHome size={20} />
-            <span>LinkedIn</span>
+            <AiFillGithub size={20} />
+            <span>GitHub</span>
+          </a>
+          <a href="#main">
+            <AiOutlineMail size={20} />
+            <span>Contact</span>
           </a>
         </div>
-      ) : (
-        <div>false</div>
-      )}
+      ) : null}
+      <div className="large-nav">
+        <div className="large-nav-container">
+          <a href="#main">
+            <AiOutlineHome size={20} />
+          </a>
+          <a href="#main">
+            <AiOutlineProject size={20} />
+          </a>
+          <a href="#main">
+            <GrDocumentText size={20} />
+          </a>
+          <a href="#main">
+            <AiFillGithub size={20} />
+          </a>
+          <a href="#main">
+            <AiOutlineMail size={20} />
+          </a>
+        </div>
+      </div>
     </div>
   );
 };
