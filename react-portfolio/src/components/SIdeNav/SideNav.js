@@ -15,7 +15,7 @@ const SideNav = () => {
     setNav(!nav);
   };
   return (
-    <div className="sidenav">
+    <div>
       <GiHamburgerMenu className="hamburger" onClick={navHandler} />
       {nav ? (
         <div className="small-nav">
