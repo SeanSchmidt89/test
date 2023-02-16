@@ -1,0 +1,24 @@
+.work-item {
+  display: flex;
+  border-left: 1px solid gray;
+  position: relative;
+}
+
+.work-item li {
+  margin-bottom: 1.5rem;
+  margin-left: 1.3rem;
+}
+
+.work-item p span {
+  color: black;
+}
+
+.work-item .dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50px;
+  left: -0.27rem;
+  top: 0.4rem;
+  background-color: gray;
+}

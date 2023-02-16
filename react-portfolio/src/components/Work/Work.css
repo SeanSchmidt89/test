@@ -1,0 +1,11 @@
+.work {
+  width: 100%;
+  max-width: 1040px;
+  margin: auto;
+  padding: 3rem 4rem;
+}
+
+.work h1 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
