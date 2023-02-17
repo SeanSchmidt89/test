@@ -5,33 +5,35 @@ import "./Work.css";
 const data = [
   {
     year: 2020,
-    title: "Google",
-    duration: "3 Years",
-    details: "Blah blah blah blah ajijdfoijsifojdofjjdfoia",
+    title: "Caring for the Cascades",
+    duration: "1 Year",
+    details: "In home medical care for Hosipice clients",
+  },
+  {
+    year: 2022,
+    title: "Vet-Tech Program (full-time school)",
+    duration: "6 Months",
+    details:
+      "I attended a coding bootcamp named PDX Code-Guild throught a program called Vet-Tech that is run from the VA",
   },
   {
     year: 2020,
-    title: "Googlesdfd",
-    duration: "3 Years",
-    details: "Blah blah blah blah ajijdfoijsifojdofjjdfoia",
+    title: "Shipment Packer",
+    duration: "6 Months",
+    details: "Apel Extrusions",
   },
   {
-    year: 2020,
-    title: "Googlsdfe",
-    duration: "3 Years",
-    details: "Blah blah blah blah ajijdfoijsifojdofjjdfoia",
+    year: 2017,
+    title: "New Horizons",
+    duration: "4 Years",
+    details: "In home medical care for Hosipice clients",
   },
   {
-    year: 2020,
-    title: "Goofsdfasgle",
-    duration: "3 Years",
-    details: "Blah blah blah blah ajijdfoijsifojdofjjdfoia",
-  },
-  {
-    year: 2020,
-    title: "Googsdfadsle",
-    duration: "3 Years",
-    details: "Blah blah blah blah ajijdfoijsifojdofjjdfoia",
+    year: 2012,
+    title: "US Navy",
+    duration: "5 Years",
+    details:
+      "Navy Corpsman at Balboa Naval Hospital and 1st Marine Division Camp Pendelton",
   },
 ];
 

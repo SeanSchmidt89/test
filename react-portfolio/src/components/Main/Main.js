@@ -1,5 +1,5 @@
 import React from "react";
-import MainPic from "../../assests/main.jpg";
+import MainPic from "../../assets/main.jpg";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import "./Main.css";
 
@@ -10,7 +10,7 @@ const Main = () => {
       <div className="overlay"></div>
       <div className="text-container">
         <h1>Sean Schmidt</h1>
-        <hp>Frontend Developer</hp>
+        <p>Frontend Developer</p>
         <p>Navy Veteran</p>
         <div className="socials">
           <a href="https://www.linkedin.com/in/sean-schmidt-018459239/">

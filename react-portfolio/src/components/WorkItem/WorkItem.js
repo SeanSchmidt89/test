@@ -6,12 +6,12 @@ const WorkItem = ({ item }) => {
     <ul className="work-item">
       <li>
         <div className="dot"/>
-        <p>
-          <span>{item.year}</span>
-          <span>{item.title}</span>
-          <span>{item.duration}</span>
+        <p className="item-info">
+          <span className="year">{item.year}</span>
+          <span className="title">{item.title}</span>
+          <span className="duration">{item.duration}</span>
         </p>
-        <p>{item.details}</p>
+        <p className="details">{item.details}</p>
       </li>
     </ul>
   );

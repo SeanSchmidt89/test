@@ -19,7 +19,7 @@ const SideNav = () => {
       <GiHamburgerMenu className="hamburger" onClick={navHandler} />
       {nav ? (
         <div className="small-nav">
-          <a href="#main">
+          <a href="#main" onClick={navHandler}>
             <AiOutlineHome size={20} />
             <span>Home</span>
           </a>
@@ -27,15 +27,15 @@ const SideNav = () => {
             <AiOutlineProject size={20} />
             <span>Projects</span>
           </a>
-          <a href="#main">
+          <a href="#work" onClick={navHandler}>
             <GrDocumentText size={20} />
-            <span>Resume</span>
+            <span>Work</span>
           </a>
-          <a href="#main">
+          <a href="#main" onClick={navHandler}>
             <AiFillGithub size={20} />
             <span>GitHub</span>
           </a>
-          <a href="#main">
+          <a href="#main" onClick={navHandler}>
             <AiOutlineMail size={20} />
             <span>Contact</span>
           </a>
