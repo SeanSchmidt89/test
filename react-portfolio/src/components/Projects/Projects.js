@@ -30,6 +30,13 @@ const Projects = () => {
   return (
     <div className="projects" id="projects">
       <h1>Projects</h1>
+      <p>
+        The following three projects are made using React Js, Redux toolkit,
+        React Router, React-Icons, Axios and Firebase. Redux toolkit is used for
+        state management on all three projects. Also all three projects use
+        Axios to pull data from API's. These are my most up to date and recent
+        projects, I hope you enjoy.
+      </p>
       <div className="projs-container">
         {projs.map((item) => (
           <ProjectItem key={item.title} item={item} />
