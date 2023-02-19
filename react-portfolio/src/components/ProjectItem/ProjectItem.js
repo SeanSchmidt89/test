@@ -8,8 +8,8 @@ const ProjectItem = ({ item }) => {
       <div className="img-container">
         <img src={item.img} alt={item.title} />
         <div className="item-overlay">
-          <a href={item.preview}>Live Preview</a>
-          <a href={item.code}>View Code</a>
+          <a href={item.preview}>LIVE PREVIEW</a>
+          <a href={item.code}>VIEW CODE</a>
         </div>
       </div>
     </div>

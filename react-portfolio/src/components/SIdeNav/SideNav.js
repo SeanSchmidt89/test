@@ -23,7 +23,7 @@ const SideNav = () => {
             <AiOutlineHome size={20} />
             <span>Home</span>
           </a>
-          <a href="#main">
+          <a href="#projects" onClick={navHandler}>
             <AiOutlineProject size={20} />
             <span>Projects</span>
           </a>
@@ -43,19 +43,19 @@ const SideNav = () => {
       ) : null}
       <div className="large-nav">
         <div className="large-nav-container">
-          <a href="#main">
+          <a href="#main" onClick={navHandler}>
             <AiOutlineHome size={20} />
           </a>
-          <a href="#main">
+          <a href="#projects" onClick={navHandler}>
             <AiOutlineProject size={20} />
           </a>
-          <a href="#main">
+          <a href="#work" onClick={navHandler}>
             <GrDocumentText size={20} />
           </a>
-          <a href="#main">
+          <a href="#main" onClick={navHandler}>
             <AiFillGithub size={20} />
           </a>
-          <a href="#main">
+          <a href="#main" onClick={navHandler}>
             <AiOutlineMail size={20} />
           </a>
         </div>
