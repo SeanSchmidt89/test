@@ -12,7 +12,7 @@ const Contact = () => {
             <input type="text" name="name" />
           </div>
           <div>
-            <label>Phone Number</label>
+            <label>Phone</label>
             <input type="text" name="phone" />
           </div>
         </div>
@@ -30,7 +30,7 @@ const Contact = () => {
             <textarea rows="10" name="message"></textarea>
           </div>
         </div>
-        <button type="submit">Send</button>
+        <button type="submit">Send Message</button>
       </form>
     </div>
   );

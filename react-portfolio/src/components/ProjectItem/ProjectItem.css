@@ -91,3 +91,55 @@
     border-radius: 14px;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .projectitem {
+    margin: 2.2rem 0rem;
+  }
+
+  .projectitem h2 {
+    margin-bottom: 1rem;
+    font-family: "dancing script";
+    font-weight: 700;
+    font-size: 1.9rem;
+    text-align: center;
+  }
+
+  .img-container {
+    width: 370px;
+    height: 250px;
+  }
+
+  .img-container img {
+    width: 370px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .projectitem {
+    margin: 1.4rem 0rem;
+  }
+
+  .projectitem h2 {
+    margin-bottom: 1rem;
+    font-family: "dancing script";
+    font-weight: 700;
+    font-size: 1.7rem;
+    text-align: center;
+  }
+
+  .img-container {
+    width: 330px;
+    height: 220px;
+  }
+
+  .img-container img {
+    width: 330px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+}
