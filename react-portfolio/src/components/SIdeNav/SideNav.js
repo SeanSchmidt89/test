@@ -31,16 +31,16 @@ const SideNav = () => {
             <GrDocumentText size={20} />
             <span>Work</span>
           </a>
+          <a href="#contact" onClick={navHandler}>
+            <AiOutlineMail size={20} />
+            <span>Contact</span>
+          </a>
           <a
             href="https://github.com/SeanSchmidt89?tab=overview&from=2023-02-01&to=2023-02-19"
             onClick={navHandler}
           >
             <AiFillGithub size={20} />
             <span>GitHub</span>
-          </a>
-          <a href="#contact" onClick={navHandler}>
-            <AiOutlineMail size={20} />
-            <span>Contact</span>
           </a>
         </div>
       ) : null}
@@ -55,14 +55,14 @@ const SideNav = () => {
           <a href="#work" onClick={navHandler}>
             <GrDocumentText size={20} />
           </a>
+          <a href="#contact" onClick={navHandler}>
+            <AiOutlineMail size={20} />
+          </a>
           <a
             href="https://github.com/SeanSchmidt89?tab=overview&from=2023-02-01&to=2023-02-19"
             onClick={navHandler}
           >
             <AiFillGithub size={20} />
-          </a>
-          <a href="#contact" onClick={navHandler}>
-            <AiOutlineMail size={20} />
           </a>
         </div>
       </div>

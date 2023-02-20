@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <SideNav />
       <Main />
-      <Work />
       <Projects />
+      <Work />
       <Contact />
     </div>
   );

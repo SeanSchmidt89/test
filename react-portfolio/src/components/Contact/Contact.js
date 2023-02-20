@@ -27,7 +27,12 @@ const Contact = () => {
           </div>
           <div>
             <label>Message</label>
-            <textarea rows="10" name="message"></textarea>
+            <textarea
+              rows="10"
+              name="message"
+              placeholder="still in progress of connecting email, if you need to contact me please
+        message me on LinkedIn"
+            ></textarea>
           </div>
         </div>
         <button type="submit">Send Message</button>
