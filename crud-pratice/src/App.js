@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import List from "./List";
+import TodoContext from "./TodoContext";
 
 function App() {
+  const { addTodo } = useContext(TodoContext);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [todo, setTodo] = useState({});
 
   const titleHandler = (e) => {
     setTitle(e.target.value);
@@ -15,10 +17,9 @@ function App() {
 
   const formHandler = (e) => {
     e.preventDefault();
-    setTodo({ todoTitle: title, todoContent: content });
+    addTodo({ todoTitle: title, todoContent: content });
     setContent("");
     setTitle("");
-    console.log(todo);
   };
 
   return (
@@ -35,7 +36,7 @@ function App() {
         </div>
         <button type="submit">Add Todo</button>
       </form>
-      {todo.todoTitle && <p>{todo.todoTitle}</p>}
+      <List />
     </div>
   );
 }
