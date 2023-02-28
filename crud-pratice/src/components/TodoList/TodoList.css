@@ -1,0 +1,10 @@
+.todoList {
+  margin: auto;
+  width: 100%;
+  max-width: 300px;
+  height: 20vh;
+}
+
+.todoList p {
+  text-align: center;
+}
