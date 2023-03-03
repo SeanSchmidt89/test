@@ -15,11 +15,13 @@ const Form = () => {
         </div>
         <div>
           <label>Priority</label>
-          <select name="priority" onChange={selectHandler}>
+          <select
+            name="priority"
+            onChange={selectHandler}
+            defaultValue="medium"
+          >
             <option value="high">High</option>
-            <option value="medium" selected>
-              Medium
-            </option>
+            <option value="medium">Medium</option>
             <option value="low">low</option>
           </select>
         </div>

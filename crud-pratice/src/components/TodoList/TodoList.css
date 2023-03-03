@@ -1,8 +1,33 @@
 .todoList {
   margin: auto;
+  margin-bottom: 14rem;
   width: 100%;
   max-width: 600px;
-  height: 20vh;
+  height: 100%;
+}
+
+.todoList .filter {
+  margin: 1.6rem auto;
+  width: 280px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter h2 {
+  font-size: 1.5rem;
+}
+
+.filter select {
+  margin-left: 0.7rem;
+  margin-top: 0.3rem;
+  padding: 0.15rem;
+  font-size: 1.08rem;
+  font-weight: 600;
+  border: 2px solid black;
+  border-radius: 6px;
+  outline: none;
 }
 
 .todoList p {
