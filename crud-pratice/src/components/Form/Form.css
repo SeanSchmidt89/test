@@ -1,6 +1,40 @@
 .form {
-  width: 100%;
-  max-width: 300px;
-  height: 40vh;
-  margin: auto;
+  margin: 1rem auto;
+  width: 600px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: rgb(49, 49, 49);
+  border: 2px solid rgb(21, 21, 21);
+  border-radius: 24px;
+}
+
+.form label {
+  margin-right: 0.5rem;
+  font-weight: 600;
+}
+
+.form input {
+  margin: 0.5rem auto;
+  height: 27px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.form select {
+  float: right;
+  height: 26px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.form button {
+  margin: 0.5rem auto;
+  height: 30px;
+  width: 205px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
 }

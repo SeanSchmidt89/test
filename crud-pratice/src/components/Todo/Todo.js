@@ -41,7 +41,10 @@ const Todo = ({ item }) => {
   return (
     <div className="todo">
       <p className="todo-title">{item.title}</p>
-      <p className="todo-complete">complete: {item.complete ? "yes" : "no"}</p>
+      <p className="todo-complete">
+        complete: {item.complete ? "yes" : "no"}{" "}
+        <span>priority: {item.priority}</span>
+      </p>
       <div className="todo-options">
         <button onClick={deleteHandler}>Delete</button>
         <button onClick={completeHandler}>Complete</button>

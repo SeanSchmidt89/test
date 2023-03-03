@@ -3,7 +3,9 @@ import TodoContext from "../../TodoContext";
 import "./Form.css";
 
 const Form = () => {
-  const { title, titleHandler, formHandler } = useContext(TodoContext);
+  const { title, titleHandler, formHandler, selectHandler } =
+    useContext(TodoContext);
+
   return (
     <div className="form">
       <form onSubmit={formHandler}>
@@ -13,9 +15,11 @@ const Form = () => {
         </div>
         <div>
           <label>Priority</label>
-          <select name='priority'>
+          <select name="priority" onChange={selectHandler}>
             <option value="high">High</option>
-            <option value="medium">Medium</option>
+            <option value="medium" selected>
+              Medium
+            </option>
             <option value="low">low</option>
           </select>
         </div>

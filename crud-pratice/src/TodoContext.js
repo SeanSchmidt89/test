@@ -5,9 +5,14 @@ const TodoContext = createContext();
 export const TodoProvider = ({ children }) => {
   const [todos, setTodos] = useState([]);
   const [title, setTitle] = useState("");
+  const [priority, SetPriority] = useState("medium");
 
   const titleHandler = (e) => {
     setTitle(e.target.value);
+  };
+
+  const selectHandler = (e) => {
+    SetPriority(e.target.value);
   };
 
   const formHandler = (e) => {
@@ -16,6 +21,7 @@ export const TodoProvider = ({ children }) => {
       id: Math.random() * 10000,
       title: title,
       complete: false,
+      priority: priority,
     };
     setTodos((prevTodos) => {
       return [...prevTodos, newTodo];
@@ -25,7 +31,14 @@ export const TodoProvider = ({ children }) => {
 
   return (
     <TodoContext.Provider
-      value={{ todos, setTodos, title, titleHandler, formHandler}}
+      value={{
+        todos,
+        title,
+        selectHandler,
+        setTodos,
+        titleHandler,
+        formHandler,
+      }}
     >
       {children}
     </TodoContext.Provider>
