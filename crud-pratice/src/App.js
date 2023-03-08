@@ -1,10 +1,8 @@
-import React, { useState, useContext } from "react";
-import TodoContext from "./TodoContext";
+import React from "react";
 import TodoList from "./components/TodoList/TodoList";
 import Form from "./components/Form/Form";
 
 function App() {
-  const { addTodo } = useContext(TodoContext);
 
   return (
     <div className="App">

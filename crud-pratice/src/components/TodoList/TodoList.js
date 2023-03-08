@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useSelector } from "react";
 import "../../TodoContext";
 import "./TodoList.css";
 import "../Todo/Todo";
@@ -7,6 +7,9 @@ import TodoContext from "../../TodoContext";
 
 const TodoList = () => {
   const { todos, filterTodos } = useContext(TodoContext);
+  // const reduxTodoList = useSelector((state) => state.todos.todoList)
+  //gotta think where to put this and todos coming from context...
+  //might have to move todos in context to reducer...
   return (
     <div className="todoList">
       {todos.length > 0 ? (
