@@ -1,8 +1,9 @@
-
+import { Form } from "./components/Form/Form";
 function App() {
   return (
     <div className="App">
-      hi
+      <h1 className="header">My todo App</h1>
+      <Form />
     </div>
   );
 }
