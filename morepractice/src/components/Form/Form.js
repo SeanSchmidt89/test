@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { addTodo } from "../../store/todoSlice";
 import "./Form.css";
 
-export const Form = () => {
+const Form = () => {
   const [inputText, setInputText] = useState("");
   const [priority, setPriority] = useState("Medium");
   const dispatch = useDispatch();
@@ -29,21 +29,26 @@ export const Form = () => {
   };
   return (
     <div className="form">
-      Form
       <form onSubmit={formHandler}>
         <h2>Add a Todo</h2>
-        <input
-          onChange={inputHandler}
-          value={inputText}
-          placeholder="Todo Name"
-        />
-        <select onChange={selectHandler} defaultValue="medium">
-          <option>High</option>
-          <option>Medium</option>
-          <option>Low</option>
-        </select>
-        <button type="submit">Add</button>
+        <div className="form-container">
+          <div className="input-container">
+            <input
+              onChange={inputHandler}
+              value={inputText}
+              placeholder="Todo Name"
+            />
+            <select onChange={selectHandler} defaultValue="medium">
+              <option>High</option>
+              <option>Medium</option>
+              <option>Low</option>
+            </select>
+          </div>
+          <button type="submit">Add</button>
+        </div>
       </form>
     </div>
   );
 };
+
+export default Form;

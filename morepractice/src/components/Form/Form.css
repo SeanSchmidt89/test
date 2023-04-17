@@ -1,6 +1,24 @@
 .form {
-    margin: auto;
-    width: 400px;
-    height: 200px;
-    border: 1px solid red;
+  margin: auto;
+  width: 400px;
+  height: 200px;
+  border: 1px solid red;
+}
+
+.form h2 {
+  text-align: center;
+}
+
+.form .form-container {
+  margin: 1rem auto 0rem auto;
+  width: 239px;
+}
+
+.form button {
+  width: 100%;
+  margin: 0.3rem auto;
+  padding: 0.1rem;
+  border: 1px solid black;
+  border-radius: 3px;
+  cursor: pointer;
 }
