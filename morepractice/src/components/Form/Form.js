@@ -5,11 +5,15 @@ import "./Form.css";
 
 export const Form = () => {
   const [inputText, setInputText] = useState("");
-  const [priority, setPriority] = useState("medium");
+  const [priority, setPriority] = useState("Medium");
   const dispatch = useDispatch();
 
   const inputHandler = (e) => {
     setInputText(e.target.value);
+  };
+
+  const selectHandler = (e) => {
+    setPriority(e.target.value);
   };
 
   const formHandler = (e) => {
@@ -33,7 +37,7 @@ export const Form = () => {
           value={inputText}
           placeholder="Todo Name"
         />
-        <select defaultValue="medium">
+        <select onChange={selectHandler} defaultValue="medium">
           <option>High</option>
           <option>Medium</option>
           <option>Low</option>
