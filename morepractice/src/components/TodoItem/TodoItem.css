@@ -1,8 +1,24 @@
 .todo-item {
   margin: 1rem;
   padding: 0.8rem 0.4rem;
-  width: 200px;
-  height: 200;
+  width: 180px;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   border: 2px solid black;
   border-radius: 12px;
+}
+
+.todo-item .item-title {
+  margin: 0 0 0.3rem 0;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.todo-item .complete {
+  font-size: 0.75rem;
+  color: gray;
 }

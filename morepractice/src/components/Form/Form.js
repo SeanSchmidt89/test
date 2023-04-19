@@ -38,7 +38,7 @@ const Form = () => {
               value={inputText}
               placeholder="Todo Name"
             />
-            <select onChange={selectHandler} defaultValue="medium">
+            <select onChange={selectHandler} defaultValue="Medium">
               <option>High</option>
               <option>Medium</option>
               <option>Low</option>
