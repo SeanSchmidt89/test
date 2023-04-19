@@ -18,3 +18,4 @@ const TodoItem = ({ item }) => {
 };
 
 export default TodoItem;
+// notes
