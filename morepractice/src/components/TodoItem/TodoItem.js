@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { deleteTodo, completeTodo } from "../../store/todoSlice";
+import { deleteTodo, completeTodo, updateTodo } from "../../store/todoSlice";
 import { useDispatch } from "react-redux";
 import "./TodoItem.css";
 
 const TodoItem = ({ item }) => {
   const [showUpdate, setShowUpdate] = useState(false);
+  const [updateText, setUpdateText] = useState("");
   const dispatch = useDispatch();
 
   const deleteHandler = () => {
@@ -18,6 +19,14 @@ const TodoItem = ({ item }) => {
   const showUpdateHandler = () => {
     setShowUpdate(!showUpdate);
   };
+
+  const updateFormHandler = (e) => {
+    e.preventDefault();
+    setShowUpdate(false);
+    let newTitle = updateText;
+    setUpdateText("");
+    dispatch(updateTodo({ id: item.id, title: newTitle }));
+  };
   return (
     <div className="todo-item">
       <div className="item-title">
@@ -29,7 +38,16 @@ const TodoItem = ({ item }) => {
         <button onClick={completeHandler}>Complete</button>
         <button onClick={showUpdateHandler}>Update</button>
       </div>
-      {showUpdate && <p>show update</p>}
+      {showUpdate && (
+        <form onSubmit={updateFormHandler}>
+          <input
+            onChange={(e) => setUpdateText(e.target.value)}
+            value={updateText}
+            placeholder="update todo"
+          />
+          <button type="submit">Update</button>
+        </form>
+      )}
     </div>
   );
 };
