@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { deleteTodo, completeTodo } from "../../store/todoSlice";
 import { useDispatch } from "react-redux";
 import "./TodoItem.css";
 
 const TodoItem = ({ item }) => {
-  // const [complete, Setcomplete] = useState(item.complete);
+  const [showUpdate, setShowUpdate] = useState(false);
   const dispatch = useDispatch();
 
   const deleteHandler = () => {
@@ -14,6 +14,10 @@ const TodoItem = ({ item }) => {
   const completeHandler = () => {
     dispatch(completeTodo(item.id));
   };
+
+  const showUpdateHandler = () => {
+    setShowUpdate(!showUpdate);
+  };
   return (
     <div className="todo-item">
       <div className="item-title">
@@ -22,8 +26,10 @@ const TodoItem = ({ item }) => {
       </div>
       <div>
         <button onClick={deleteHandler}>Delete</button>
-        <button onClick={completeHandler}>complete</button>
+        <button onClick={completeHandler}>Complete</button>
+        <button onClick={showUpdateHandler}>Update</button>
       </div>
+      {showUpdate && <p>show update</p>}
     </div>
   );
 };

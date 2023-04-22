@@ -24,12 +24,15 @@ export const todoSlice = createSlice({
         return item;
       });
     },
+    updateTodo: (state, action) => {
+      let id = action.payload;
+      //update todo
+    },
   },
 });
 
 export const { addTodo, deleteTodo, completeTodo } = todoSlice.actions;
 
 export default todoSlice.reducer;
-
 
 //notes
