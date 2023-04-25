@@ -5,7 +5,7 @@ import "./TodoItem.css";
 
 const TodoItem = ({ item }) => {
   const [showUpdate, setShowUpdate] = useState(false);
-  const [updateText, setUpdateText] = useState("");
+  const [updateText, setUpdateText] = useState(item.title);
   const dispatch = useDispatch();
 
   const deleteHandler = () => {

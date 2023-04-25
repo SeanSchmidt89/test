@@ -27,7 +27,12 @@ export const todoSlice = createSlice({
     updateTodo: (state, action) => {
       let id = action.payload.id;
       let newTitle = action.payload.title;
-      console.log(id, newTitle); // add this to the todo that needs to be changed
+      state.todos = state.todos.map((item) => {
+        if (item.id === id) {
+          return { ...item, title: newTitle };
+        }
+        return item;
+      });
     },
   },
 });
