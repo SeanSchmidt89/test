@@ -1,11 +1,29 @@
 .todo-list {
   margin: 3rem auto 2rem auto;
-  width: 300px;
+  width: 400px;
   height: 100%;
-  border: 1px solid green;
+  position: relative;
 }
 
 .todo-list h2 {
-  font-size: 1.2rem;
+  margin: 1rem 0 4rem 0;
+  font-size: 1.3rem;
   text-align: center;
+}
+
+.filter {
+  position: absolute;
+  top: 2.5rem;
+  right: 1.5rem;
+  font-size: 0.75rem;
+}
+
+.filter select {
+  width: 75px;
+  font-size: 0.75rem;
+}
+
+.filter option {
+  width: 75px;
+  font-size: 0.75rem;
 }
