@@ -1,10 +1,14 @@
-import React from 'react'
-import './TodoList.css'
+import React from "react";
+import Todo from "../Todo/Todo";
+import "./TodoList.css";
 
 const TodoList = () => {
   return (
-    <div>TodoList</div>
-  )
-}
+    <div>
+      TodoList
+      <Todo />
+    </div>
+  );
+};
 
-export default TodoList
+export default TodoList;
