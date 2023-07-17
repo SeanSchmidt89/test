@@ -1,8 +1,13 @@
 import React from "react";
 import "./Todo.css";
 
-const Todo = () => {
-  return <div>Todo</div>;
+const Todo = ({ todo }) => {
+  return (
+    <div className="todo">
+      Name: {todo.name}
+      Completed: {todo.completed ? "Done" : "Not"}
+    </div>
+  );
 };
 
 export default Todo;
