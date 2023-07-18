@@ -6,9 +6,15 @@ import "./TodoList.css";
 const TodoList = () => {
   const todos = useSelector((state) => state.todos.todos);
   return (
-    <div>
-      TodoList
-      {todos.length > 0 ? todos.map((item) => <Todo todo={item} />) : null}
+    <div className="todo-list">
+      {todos.length > 0 && (
+        <div>
+          <h2>TodoList</h2>{" "}
+          {todos.map((item) => (
+            <Todo todo={item} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

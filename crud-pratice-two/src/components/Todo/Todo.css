@@ -1,3 +1,69 @@
 .todo {
+  position: relative;
+  width: 22rem;
+  height: 16rem;
   margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+.todo .todo-header {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.4rem;
+  text-align: left;
+  border: 1px solid red;
+}
+
+.todo-header .left {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.left div {
+  margin: 0 0 0.4rem 0;
+}
+
+.todo-header .right {
+  position: absolute;
+  top: 0rem;
+  left: 12.5rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: gray;
+  text-align: right;
+  border: 1px solid red;
+}
+
+.right div {
+  margin: 0 0 0.4rem 0;
+}
+
+.todo .todo-buttons {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid red;
+}
+
+.todo .todo-buttons button {
+  margin: 0 0 0.5rem 0;
+  width: 4.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.todo .todo-text {
+  position: absolute;
+  top: 7.5rem;
+  left: 0.5rem;
+  width: 20.8rem;
+  height: 7.5rem;
+  border: 1px solid red;
 }
