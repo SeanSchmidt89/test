@@ -28,4 +28,3 @@ const Todo = ({ todo }) => {
 
 export default Todo;
 
-//notes add borders
