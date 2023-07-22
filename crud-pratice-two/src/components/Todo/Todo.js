@@ -22,6 +22,8 @@ const Todo = ({ todo }) => {
         <button>Complete</button>
       </div>
       <div className="todo-text"></div>
+      <div className="border-one" />
+      <div className="border-two" />
     </div>
   );
 };
