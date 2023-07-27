@@ -17,7 +17,7 @@
   top: 0.8rem;
   left: 0.4rem;
   text-align: left;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .todo-header .left {
@@ -35,9 +35,9 @@
   left: 12.5rem;
   font-size: 1.1rem;
   font-weight: 400;
-  color: gray;
+  color: rgb(193, 193, 193);
   text-align: right;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .right div {
@@ -51,13 +51,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .todo .todo-buttons button {
   margin: 0 0 0.5rem 0;
   width: 4.5rem;
   height: 1.5rem;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.todo .todo-buttons button:hover {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  width: 4.5rem;
+  height: 1.5rem;
+  background-color: white;
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -67,23 +79,23 @@
   left: 0.5rem;
   width: 20.8rem;
   height: 7.5rem;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .border-one {
   position: absolute;
-  top: 7.5rem;
-  left: 1rem;
-  width: 20rem;
+  top: 7rem;
+  left: 0.5rem;
+  width: 20.8rem;
   height: 0rem;
-  border: 2px solid white;
+  border: 1px solid black;
 }
 
 .border-two {
   position: absolute;
-  top: 7.5rem;
-  left: 1rem;
+  top: 0.9rem;
+  left: 16rem;
   width: 0rem;
-  height: 3rem;
-  border: 2px solid white;
+  height: 5.2rem;
+  border: 1px solid black;
 }
