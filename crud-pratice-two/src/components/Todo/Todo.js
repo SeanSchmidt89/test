@@ -1,7 +1,15 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { deleteTodo } from "../../store/TodoSlice";
 import "./Todo.css";
 
 const Todo = ({ todo }) => {
+  const dispatch = useDispatch();
+  
+  const deleteHandler = (e) => {
+    let id = todo.id;
+    dispatch(deleteTodo(id));
+  };
   return (
     <div className="todo">
       <div className="todo-header">
@@ -17,7 +25,7 @@ const Todo = ({ todo }) => {
         </div>
       </div>
       <div className="todo-buttons">
-        <button>Title</button>
+        <button onClick={deleteHandler}>Delete</button>
         <button>Text</button>
         <button>Complete</button>
       </div>
@@ -29,4 +37,3 @@ const Todo = ({ todo }) => {
 };
 
 export default Todo;
-
