@@ -1,14 +1,19 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { deleteTodo } from "../../store/TodoSlice";
+import { deleteTodo, completeTodo } from "../../store/TodoSlice";
 import "./Todo.css";
 
 const Todo = ({ todo }) => {
   const dispatch = useDispatch();
-  
+
   const deleteHandler = (e) => {
     let id = todo.id;
     dispatch(deleteTodo(id));
+  };
+
+  const completeHandler = (e) => {
+    let id = todo.id;
+    dispatch(completeTodo(id));
   };
   return (
     <div className="todo">
@@ -20,14 +25,14 @@ const Todo = ({ todo }) => {
         </div>
         <div className="right">
           <div>{todo.name}</div>
-          <div>{todo.completed ? "Done" : "No"}</div>
           <div>date</div>
+          <div>{todo.completed ? "✓" : "X"}</div>
         </div>
       </div>
       <div className="todo-buttons">
         <button onClick={deleteHandler}>Delete</button>
         <button>Text</button>
-        <button>Complete</button>
+        <button onClick={completeHandler}>Complete</button>
       </div>
       <div className="todo-text"></div>
       <div className="border-one" />
