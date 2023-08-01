@@ -5,7 +5,6 @@ import "./Form.css";
 
 const Form = () => {
   const [inputText, setInputText] = useState("");
-  // const todos = useSelector((state) => state.todos.todos);
   const dispatch = useDispatch();
   const formHandler = (e) => {
     e.preventDefault();
@@ -22,8 +21,6 @@ const Form = () => {
     setInputText(e.target.value);
   };
 
-  //next create a todo object, import slice actions, send todo to slice
-  //import store to app, add provider
   return (
     <div>
       <h2>Form</h2>
