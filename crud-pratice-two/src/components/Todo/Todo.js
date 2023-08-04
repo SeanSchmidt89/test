@@ -15,6 +15,8 @@ const Todo = ({ todo }) => {
     let id = todo.id;
     dispatch(completeTodo(id));
   };
+
+  //add text field to todo
   return (
     <div className="todo">
       <div className="todo-header">
