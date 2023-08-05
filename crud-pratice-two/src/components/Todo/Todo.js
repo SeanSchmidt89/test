@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { deleteTodo, completeTodo } from "../../store/TodoSlice";
 import "./Todo.css";
 
 const Todo = ({ todo }) => {
+  const [edit, setEdit] = useState(false);
   const dispatch = useDispatch();
 
   const deleteHandler = (e) => {
@@ -11,12 +12,16 @@ const Todo = ({ todo }) => {
     dispatch(deleteTodo(id));
   };
 
+  const editHandler = (e) => {
+    setEdit(!edit);
+  };
+
   const completeHandler = (e) => {
     let id = todo.id;
     dispatch(completeTodo(id));
   };
+  // need to put exisiting string of item inside input as place holder
 
-  //add text field to todo
   return (
     <div className="todo">
       <div className="todo-header">
@@ -33,12 +38,14 @@ const Todo = ({ todo }) => {
       </div>
       <div className="todo-buttons">
         <button onClick={deleteHandler}>Delete</button>
-        <button>Text</button>
+        <button onClick={editHandler}>Edit</button>
         <button onClick={completeHandler}>Complete</button>
       </div>
       <div className="todo-text"></div>
       <div className="border-one" />
       <div className="border-two" />
+      {edit && <input />}
+    
     </div>
   );
 };
