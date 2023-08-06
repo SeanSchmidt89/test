@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { deleteTodo, completeTodo } from "../../store/TodoSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteTodo, completeTodo, updateName } from "../../store/TodoSlice";
 import "./Todo.css";
 
 const Todo = ({ todo }) => {
-  const [edit, setEdit] = useState(false);
+  const [update, setUpdate] = useState(false);
+  const [updatedName, setUpdatedName] = useState(todo.name);
   const dispatch = useDispatch();
 
   const deleteHandler = (e) => {
@@ -12,16 +13,26 @@ const Todo = ({ todo }) => {
     dispatch(deleteTodo(id));
   };
 
-  const editHandler = (e) => {
-    setEdit(!edit);
+  const updateHandler = (e) => {
+    setUpdate(!update);
   };
 
   const completeHandler = (e) => {
     let id = todo.id;
     dispatch(completeTodo(id));
   };
-  // need to put exisiting string of item inside input as place holder
 
+  const newInputTextHandler = (e) => {
+    let text = e.target.value;
+    setUpdatedName(text);
+  };
+
+  const updateFormHandler = (e) => {
+    e.preventDefault();
+    let newTodoInfo = { id: todo.id, name: updatedName };
+    dispatch(updateName(newTodoInfo));
+    setUpdate(false);
+  };
   return (
     <div className="todo">
       <div className="todo-header">
@@ -38,14 +49,20 @@ const Todo = ({ todo }) => {
       </div>
       <div className="todo-buttons">
         <button onClick={deleteHandler}>Delete</button>
-        <button onClick={editHandler}>Edit</button>
+        <button onClick={updateHandler}>Update</button>
         <button onClick={completeHandler}>Complete</button>
       </div>
       <div className="todo-text"></div>
       <div className="border-one" />
       <div className="border-two" />
-      {edit && <input />}
-    
+      {update && (
+        <div className="updateform">
+          <form onSubmit={updateFormHandler}>
+            <input value={updatedName} onChange={newInputTextHandler} />
+            <button type="submit">Add</button>
+          </form>
+        </div>
+      )}
     </div>
   );
 };
