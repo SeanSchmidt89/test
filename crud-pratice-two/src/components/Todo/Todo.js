@@ -42,7 +42,7 @@ const Todo = ({ todo }) => {
           <div>Completed:</div>
         </div>
         <div className="right">
-          <div>{todo.name}</div>
+          <div>{todo.name.slice(0, 17)}</div>
           <div>date</div>
           <div>{todo.completed ? "✓" : "X"}</div>
         </div>

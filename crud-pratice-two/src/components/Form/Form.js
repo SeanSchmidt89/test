@@ -22,7 +22,7 @@ const Form = () => {
   };
 
   return (
-    <div>
+    <div className="form">
       <h2>Form</h2>
       <form onSubmit={formHandler}>
         <input
