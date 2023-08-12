@@ -48,8 +48,8 @@ const Todo = ({ todo }) => {
         </div>
       </div>
       <div className="todo-buttons">
-        <button onClick={deleteHandler}>Delete</button>
         <button onClick={updateHandler}>Update</button>
+        <button onClick={deleteHandler}>Delete</button>
         <button onClick={completeHandler}>Complete</button>
       </div>
       <div className="todo-text"></div>
