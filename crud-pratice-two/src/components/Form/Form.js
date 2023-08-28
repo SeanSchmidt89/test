@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { addTodo } from "../../store/TodoSlice";
 import "./Form.css";
 
@@ -8,9 +8,12 @@ const Form = () => {
   const dispatch = useDispatch();
   const formHandler = (e) => {
     e.preventDefault();
+    let date = new Date();
+    // need to fix date
     let todo = {
       name: inputText,
       id: Math.random() * 10000,
+      date: date,
       completed: false,
     };
     dispatch(addTodo(todo));
